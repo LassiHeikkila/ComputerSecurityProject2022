@@ -178,6 +178,22 @@ We can see that there are several useful commands available, such as `printenv`,
 
 There are also commands for reading and writing the SPI flash memory, which is probably the most interesting part for us. It would be nice to download the entire firmware image from the device.
 
+#### Dumping SPI flash
+The SPI flash on this device is 8MB, which is quite small and fits into RAM, so we can read all of it in one go by running:
+```console
+sf probe
+sf read 80000000 0 800000
+```
+
+Then the memory can be displayed by running:
+```console
+md.b 80000000 800000
+```
+
+Printing the memory contents through the serial port took a long time.
+
+The hexdump form of the output can be found [here](./data/spi-flash.hex), and in binary form [here](./data/spi-flash.bin).
+
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
 [tp-link-tapo-c200-unauthenticated-rce](https://www.hacefresko.com/posts/tp-link-tapo-c200-unauthenticated-rce).
