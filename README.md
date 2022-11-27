@@ -15,10 +15,13 @@ and undoing all the screws that were holding in the PCBs and motors.
 Luckily nothing was really glued in, so it was nice and tidy inside the case.
 
 The PCB has a clearly labeled UART port:
-![](./photos/uart.jpg)
+![](./photos/c200-pcb-top-uart-contacts.jpg)
 
 However, it does not have pins soldered onto it so that needed to be done:
-![](./photos/uart-with-pins.jpg)
+![](./photos/c200-pcb-top-soldered-uart-pins.jpg)
+
+and connect wires to it:
+![](./photos/c200-pcb-top-connected-uart-wires.jpg)
 
 
 ### Shell access from UART
