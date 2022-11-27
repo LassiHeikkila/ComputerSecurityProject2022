@@ -1,6 +1,10 @@
 # Computer Security Project - Hacking TP-Link C200
 Course: `521253S`
-Group: Lassi Heikkilä `Y68725369` and Mikko Isotalo `######`
+
+#Group 
+Lassi Heikkilä `Y68725369`
+
+Mikko Isotalo `######`
 
 
 ## Initial exploration
