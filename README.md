@@ -194,6 +194,42 @@ Printing the memory contents through the serial port took a long time.
 
 The hexdump form of the output can be found [here](./data/spi-flash.hex), and in binary form [here](./data/spi-flash.bin).
 
+### Extracting rootfs from SPI flash image
+We can find the partition sizes and offsets from the [boot log](./logs/c200-fw-v1.1.14-boot.log):
+```text
+[    0.403000] 0x000000000000-0x00000001d800 : "factory_boot"
+[    0.414000] mtd: partition "factory_boot" doesn't end on an erase block -- force read-only
+[    0.432000] 0x00000001d800-0x000000020000 : "factory_info"
+[    0.443000] mtd: partition "factory_info" doesn't start on an erase block boundary -- force read-only
+[    0.462000] 0x000000020000-0x000000040000 : "art"
+[    0.472000] 0x000000040000-0x000000050000 : "config"
+[    0.483000] 0x000000050000-0x000000070000 : "boot"
+[    0.493000] 0x000000070000-0x0000001c1200 : "kernel"
+[    0.503000] mtd: partition "kernel" doesn't end on an erase block -- force read-only
+[    0.519000] 0x0000001c1200-0x000000430000 : "rootfs"
+[    0.529000] mtd: partition "rootfs" doesn't start on an erase block boundary -- force read-only
+[    0.547000] 0x000000430000-0x0000007ffe00 : "rootfs_data"
+[    0.558000] mtd: partition "rootfs_data" doesn't end on an erase block -- force read-only
+[    0.575000] 0x0000007ffe00-0x000000800000 : "verify"
+[    0.585000] mtd: partition "verify" doesn't start on an erase block boundary -- force read-only
+[    0.604000] 0x000000070000-0x000000800000 : "firmware"
+```
+
+So we can expect the following partitions:
+
+| begin | end | size (hex) | size (decimal) | name | note |
+| ----- | --- | ---------- | -------------- | ---- | ---- |
+| 0x000000000000 | 0x00000001d800 | 1d800 | 120832 | factory_boot | |
+| 0x00000001d800 | 0x000000020000 | 2800 | 10240 | factory_info | |
+| 0x000000020000 | 0x000000040000 | 20000 | 131072 | art | |
+| 0x000000040000 | 0x000000050000 | 10000 | 65536 | config | |
+| 0x000000050000 | 0x000000070000 | 20000 | 131072 | boot | |
+| 0x000000070000 | 0x0000001c1200 | 151200 | 1380864 | kernel | |
+| 0x0000001c1200 | 0x000000430000 | 26ee00 | 2551296 | rootfs | |
+| 0x000000430000 | 0x0000007ffe00 | 3cfe00 | 3997184 | rootfs_data | for overlayfs? |
+| 0x0000007ffe00 | 0x000000800000 | 200 | 512 | verify | why does this overlap with firmware? |
+| 0x000000070000 | 0x000000800000 | 790000 | 7929856 | firmware | maybe this is just a "virtual" partition |
+
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
 [tp-link-tapo-c200-unauthenticated-rce](https://www.hacefresko.com/posts/tp-link-tapo-c200-unauthenticated-rce).
