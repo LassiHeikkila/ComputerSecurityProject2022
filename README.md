@@ -30,7 +30,7 @@ sudo minicom -b 57600 -D /dev/serial0 -C somefile.log
 
 Then when power is plugged in, the U-boot boot sequence and some Linux kernel logs can be observed:
 
-[boot-log](./logs/c100-fw-v1.1.14-boot.log)
+[boot-log](./logs/c200-fw-v1.1.14-boot.log)
 
 Again, thanks to hacefresko & nervous-inhuman, we know that the shell login credentials are:  
 username: `root`  
@@ -43,7 +43,7 @@ The system is running OpenWrt Linux version 12.09-rc1 with kernel version 3.10.2
 This is before installing latest available firmware update.
 
 Full exploration log (potentially sensitive info redacted):
-[shell-log](./logs/shell-log.log)
+[shell log](./logs/c200-fw-v1.1.14-shell-exploration.log)
 
 Some highlights:
 
@@ -166,8 +166,10 @@ udp        0      0 0.0.0.0:38643           0.0.0.0:*                           
 
 We can see that telnet is running but only on the local interface, so it is not accessible remotely.
 
-
 ### U-Boot exploration
+U-boot boot process can be stopped by quickly entering `slp` when "Autobooting in <n> seconds" is displayed.
+
+Full u-boot shell exploration log can be found here: [uboot log](./logs/c200-fw-v1.1.14-uboot-shell.log)
 
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
