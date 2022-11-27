@@ -30,7 +30,7 @@ sudo minicom -b 57600 -D /dev/serial0 -C somefile.log
 
 Then when power is plugged in, the U-boot boot sequence and some Linux kernel logs can be observed:
 
-[boot-log](./logs/boot-log.log)
+[boot-log](./logs/c100-fw-v1.1.14-boot.log)
 
 Again, thanks to hacefresko & nervous-inhuman, we know that the shell login credentials are:  
 username: `root`  

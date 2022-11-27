@@ -1,0 +1,610 @@
+
+
+U-Boot 2014.01-v1.2 (Aug 25 2021 - 12:36:20)
+
+Board: IPCAM RTS3903 CPU: 500M :rx5281 prid=0xdc02
+force spi nor mode
+DRAM:  64 MiB @ 1066 MHz
+Skipping flash_init
+Flash: 0 Bytes
+SF: Unsupported flash IDs: manuf 20, jedec 4017, ext_jedec 0200
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Using default environment
+
+Autobooting in 1 seconds
+set watchdog, resetting...
+
+U-Boot 2014.01-v1.2 (Aug 25 2021 - 12:45:45)
+
+Board: IPCAM RTS3903 CPU: 500M :rx5281 prid=0xdc02
+force spi nor mode
+DRAM:  64 MiB @ 1066 MHz
+manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Flash: 0 Bytes
+manuf 20, jedec 4017, ext_jedec 8204
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Realtek PCIe GBE Family Controller mcfg = 0024
+new_ethaddr = 00:00:00:00:00:00
+r8168#0
+VF: validateLocalFirmware: copying flash to 0x82000000
+manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+SF: 8388608 bytes @ 0x0 Read: OK
+VF: validateLocalFirmware: ret=0(82fb7de0)
+VF: validateLocalFirmware: validate local firmware...
+TP Header at 82070000
+Autobooting in 1 seconds
+manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+SF: 3145728 bytes @ 0x70000 Read: OK
+## Booting image at 82000000 ...
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 3.10.27 (root@smartlifeci1) (gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2521) ) #2 PREEMPT Wed Aug 25 12:57:38 CST 2021
+[    0.000000] prom cpufreq = 500000000
+[    0.000000] prom memsize = 67108864
+[    0.000000] hw_ver: 0x2, hw_rev: 0x1, isp_ver: 0x1
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU revision is: 0000dc02
+[    0.000000] FPU revision is: 01730001
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 04000000 @ 00000000 (usable)
+[    0.000000] Reserved contiguous memory at 0x410000(0x13ec000)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x03ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x03ffffff]
+[    0.000000] icache: 32kB/32B, dcache: 16kB/32B, scache: 0kB/0B
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+[    0.000000] Kernel command line: console=ttyS1,57600 root=/dev/mtdblock6 spdev=/dev/mtdblock7 rts-quadspi.channels=dual os_size=1376256
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 40372k/65536k available (3065k kernel code, 25164k reserved, 812k data, 152k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:57
+[    0.001000] Calibrating delay loop... 497.66 BogoMIPS (lpj=248832)
+[    0.012000] pid_max: default: 32768 minimum: 301
+[    0.013000] Mount-cache hash table entries: 512
+[    0.016000] pinctrl core: initialized pinctrl subsystem
+[    0.017000] NET: Registered protocol family 16
+[    0.018000] Init force reset registers
+[    0.019000] rtsxb2 registered with IRQs
+[    0.020000] INFO: initializing ISP memory ...
+[    0.021000] INFO: initializing ISP device ...
+[    0.022000] ISP camera platform devices added
+[    0.023000] INFO: initializing SD controller ...
+[    0.024000] INFO: initializing snd device ...
+[    0.025000] snd resvd mem size : 524288
+[    0.026000] INFO: initializing USB host ...
+[    0.027000] INFO: initializing spi host ...0
+[    0.028000] spi platform id is ffffffff
+[    0.029000] INFO: initializing I2C master ...
+[    0.030000] INFO: initializing DMA controller ...
+[    0.031000] INFO: initializing adc ...
+[    0.032000] INFO: initializing pinctrl device ...
+[    0.033000] pinctrl_platform rts3903-pinctrl: rtspc registered with IRQs
+[    0.034000] INFO: initializing ethernet devices ...
+[    0.035000] INFO: initializing USB phy ...
+[    0.036000] INFO: initializing watchdog controller ...
+[    0.037000] INFO: initializing PWM controller ...
+[    0.038000] INFO: initializing crypto device ...
+[    0.042000] bio: create slab <bio-0> at 0
+[    0.043000] rts_dmac rts3903-dmac: DesignWare DMA Controller, 4 channels
+[    0.044000] INFO: realtek DMA engine inited
+[    0.045000] usbcore: registered new interface driver usbfs
+[    0.046000] usbcore: registered new interface driver hub
+[    0.047000] usbcore: registered new device driver usb
+[    0.048000] usbphy-platform usbphy-platform: Initialized Realtek IPCam USB Phy module
+[    0.049000] Linux video capture interface: v2.00
+[    0.050000] Advanced Linux Sound Architecture Driver Initialized.
+[    0.052000] NET: Registered protocol family 2
+[    0.061000] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.074000] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.087000] TCP: Hash tables configured (established 512 bind 512)
+[    0.099000] TCP: reno registered
+[    0.106000] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.117000] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.130000] NET: Registered protocol family 1
+[    0.144000] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.156000] msgmni has been set to 78
+[    0.165000] NET: Registered protocol family 38
+[    0.174000] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    0.188000] io scheduler noop registered
+[    0.196000] io scheduler deadline registered
+[    0.205000] io scheduler cfq registered (default)
+[    0.214000] pwm_platform pwm_platform: could not get default status
+[    0.227000] Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+[    0.239000] serial8250: ttyS0 at MMIO 0x18810000 (irq = 6) is a 16550A
+[    0.252000] console [ttyS1] enabled, bootconsole disabled
+[    0.252000] console [ttyS1] enabled, bootconsole disabled
+[    0.274000] serial8250: ttyS1 at MMIO 0x18810100 (irq = 6) is a 16550A
+[    0.287000] serial8250: ttyS2 at MMIO 0x18810200 (irq = 6) is a 16550A
+[    0.301000] dbg_iomem initialized!
+[    0.308000] rts-quadspi rts3903-qspi: force to set channels from quad mode to dual mode
+[    0.324000] rts-quadspi rts3903-qspi: request 60000000 Hz, force to set 41666666 Hz
+[    0.339000] rts-quadspi rts3903-qspi: found default, expected mx25l12835f
+[    0.353000] rts-quadspi rts3903-qspi: default (8192 Kbytes)
+[    0.364000] hdrA:1380352,B:1839616,C:2551296
+[    0.373000] Searching for RedBoot partition table
+[    0.382000] 10 RedBoot partitions found on MTD device m25p80
+[    0.394000] Creating 10 MTD partitions on "m25p80":
+[    0.403000] 0x000000000000-0x00000001d800 : "factory_boot"
+[    0.414000] mtd: partition "factory_boot" doesn't end on an erase block -- force read-only
+[    0.432000] 0x00000001d800-0x000000020000 : "factory_info"
+[    0.443000] mtd: partition "factory_info" doesn't start on an erase block boundary -- force read-only
+[    0.462000] 0x000000020000-0x000000040000 : "art"
+[    0.472000] 0x000000040000-0x000000050000 : "config"
+[    0.483000] 0x000000050000-0x000000070000 : "boot"
+[    0.493000] 0x000000070000-0x0000001c1200 : "kernel"
+[    0.503000] mtd: partition "kernel" doesn't end on an erase block -- force read-only
+[    0.519000] 0x0000001c1200-0x000000430000 : "rootfs"
+[    0.529000] mtd: partition "rootfs" doesn't start on an erase block boundary -- force read-only
+[    0.547000] 0x000000430000-0x0000007ffe00 : "rootfs_data"
+[    0.558000] mtd: partition "rootfs_data" doesn't end on an erase block -- force read-only
+[    0.575000] 0x0000007ffe00-0x000000800000 : "verify"
+[    0.585000] mtd: partition "verify" doesn't start on an erase block boundary -- force read-only
+[    0.604000] 0x000000070000-0x000000800000 : "firmware"
+[    0.615000] rts-quadspi rts3903-qspi: Realtek QSPI Controller at 0x18030000 (irq 5)
+[    0.630000] rtl8168 Gigabit Ethernet driver 8.038.00-NAPI loaded
+[    0.730000] rtl8168 rts3903-rtl8168 (unregistered net_device): Get invalid MAC address from flash!
+[    0.748000] eth%d: 0xb8400000, 00:00:00:00:00:00, IRQ 10
+[    0.760000] PPP generic driver version 2.4.2
+[    0.768000] PPP MPPE Compression module registered
+[    0.778000] NET: Registered protocol family 24
+[    0.787000] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.800000] ehci-rts: ehci-rts platform driver
+[    0.809000] ehci-platform ehci-platform: EHCI Host Controller
+[    0.821000] ehci-platform ehci-platform: new USB bus registered, assigned bus number 1
+[    0.837000] ehci-platform ehci-platform: irq 11, io mem 0x18100000
+[    0.855000] ehci-platform ehci-platform: USB 2.0 started, EHCI 1.00
+[    0.867000] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    0.881000] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.895000] usb usb1: Product: EHCI Host Controller
+[    0.905000] usb usb1: Manufacturer: Linux 3.10.27 ehci_hcd
+[    0.916000] usb usb1: SerialNumber: ehci-platform
+[    0.926000] hub 1-0:1.0: USB hub found
+[    0.934000] hub 1-0:1.0: 1 port detected
+[    0.942000] i2c /dev entries driver
+[    0.949000] rtscam:isp resvd mem addr : 0x00490000, size : 0x136c000
+[    0.964000] rtscam:rtscam_mem_init v:0xa0490000 p:0x00490000 s:0x0000136c
+[    0.978000] rtscam:rtscam_lock_init
+[    0.985000] rtscam:rtscam_soc_probe
+[    0.992000] rtscam:rtscam_hx280_probe
+[    1.004000] rtscam:hx280enc:HW at base <0x18060000> with ID <0x48317011>
+[    1.018000] rtscam:rtscam_jpgenc_probe
+[    1.030000] rtscam:rtscam_osd2_probe
+[    1.038000] rtscam:rtstream_init
+[    1.045000] Stopped watchdog timer
+[    1.052000] Started watchdog timer
+[    1.058000] timer margin: 8 sec
+[    1.110000] rlx snd internal codec init
+[    1.118000] soc-audio soc-audio.0.auto: ASoC: machine RLX_INTERN_CARD should use snd_soc_register_card()
+[    1.138000] soc-audio soc-audio.0.auto:  rlx-codec-digital <-> pcm-platform mapping ok
+[    1.154000] soc-audio soc-audio.0.auto:  rlx-codec-analog <-> pcm-platform mapping ok
+[    1.171000] rlx snd spdif init
+[    1.178000] soc-audio soc-audio.1.auto: ASoC: machine RLX_SPDIF_CARD should use snd_soc_register_card()
+[    1.197000] soc-audio soc-audio.1.auto:  rlx-spdif <-> spdif-platform mapping ok
+[    1.212000] nf_conntrack version 0.5.0 (630 buckets, 2520 max)
+[    1.225000] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.236000] TCP: cubic registered
+[    1.243000] NET: Registered protocol family 17
+[    1.252000] Key type dns_resolver registered
+[    1.261000] slp_flash_init[    1.266000] usb 1-1: new high-speed USB device number 2 using ehci-platform
+
+[    1.280000] Registered character driver slp_flash_chrdev
+[    1.294000] ALSA device list:
+[    1.300000]   #0: RLX_INTERN_CARD
+[    1.307000]   #1: RLX_SPDIF_CARD
+[    1.318000] VFS: Mounted root (squashfs filesystem) readonly on device 31:6.
+[    1.334000] Freeing unused kernel memory: 152K (803da000 - 80400000)
+[    1.521000] usb 1-1: New USB device found, idVendor=0bda, idProduct=f179
+[    1.556000] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    1.591000] usb 1-1: SerialNumber: 2887BA9D485E
+- preinit -
+mounting rwroot
+- init -
+
+Please press Enter to activate this console. [    5.383000] Success to init gpio reset
+[    5.598000] cryptodev: driver 1.9 loaded.
+/etc/rc.common: cd: line 97: can't cd to /etc/uci-defaults
+Wed Aug 25 07:57:11 DST 2021
+open /dev/crypto success
+close /dev/crypto
+[    9.515000] leds-gpio leds-gpio: pins are not configured from the driver
+[main:35] Success to start audiopaly
+Command failed: Unknown error
+Starting wlan-manager: wlan-manager started.
+[   12.327000] wlan-manager: insmod 8188fu.ko...
+[   12.524000] device eth0 entered promiscuous mode
+[   12.557000] br-wan: port 1(eth0) entered forwarding state
+[   12.568000] br-wan: port 1(eth0) entered forwarding state
+wlan-manager: driver is not ready, wait...
+10-wifi-ethernet-switch: boot not done, don't switch
+Command failed: Not found
+[   14.017000] usbcore: registered new interface driver rtl8188fu
+[   14.498000] wlan-manager: start sta...
+[   14.506000] wlan-manager: ifconfig wlan0 up.
+[   14.572000] br-wan: port 1(eth0) entered forwarding state
+[   15.239000] device wlan0 entered promiscuous mode
+[   15.260000] br-wan: port 2(wlan0) entered forwarding state
+[   15.271000] br-wan: port 2(wlan0) entered forwarding state
+[   17.272000] br-wan: port 2(wlan0) entered forwarding state
+[Debug] [setLedEvent:513] setLedEvent = 3
+[Debug] [main:660] gCurrLedEvent = 3
+[2021-08-25 07:57:22][ERROR][cloud-sdk]cloud.c:93:main-- 
+*********************
+cloud-brd version: -rc04, build_time:20210825_123315
+*********************
+
+**************************************************
+********************config dump*******************
+--------------------------------------------------
+sef domain                      : n-deventry-dcipc.tplinkcloud.com
+sef port                        : 443
+cloud svr default port          : 443
+default svr                     : n-devs-dcipc.tplinkcloud.com
+default port                    : 443
+default valid time              : 172800
+heartbeat interval              : 55000
+request timeout                 : 5000
+reconnect timewait max          : 128000
+reconnect cachedsvr max times   : 5
+reconnect defaultsvr max times  : 5
+reconnect random time min       : 2000
+reconnect random time max       : 128000
+short connect interval          : 259200000
+max message number              : 1000
+max client number               : 20
+service file                    : /etc/cloud-sdk/cloud_service.cfg
+cer file                        : /etc/cloud-sdk/2048_newroot.cer
+ssl verify CN                   : 
+ssl verify time                 : 0
+**************************************************
+[2021-08-25 07:57:22][ERROR][cloud-sdk]cloud.c:137:main-- cloud-brd run first time
+[2021-08-25 07:57:22][ERROR][cloud-sdk]cloud.c:167:main-- connect state init success: 0x4 0x4
+[2021-08-25 07:57:22][ERROR][cloud-sdk]cloud.c:214:main-- waiting for register
+open /dev/crypto success
+[2021-08-25 07:57:25][ERROR][cloud-client]Function is:main, Line is:480.cloud-client start!
+
+[2021-08-25 07:57:25][ERROR][cloud-sdk]cloud_api.c:38:cloud_api_init-- cloud-sdk version: -rc04, build_time:20210825_123315
+[2021-08-25 07:57:25][ERROR][cloud-sdk]cloud_register.c:125:register_thread-- cloud-sdk register a fd in cloud-brd first time
+
+[2021-08-25 07:57:25][ERROR][cloud-sdk]cloud_client_handle.c:939:cloud_client_handle_register-- cloud-brd reqeuset helloCloud string from cloud-sdk
+
+[2021-08-25 07:57:25][ERROR][cloud-sdk]cloud_register.c:416:register_handle_dispatch-- cloud-sdk handle cloud-brd's helloCloud string request 1 times
+[2021-08-25 07:57:25][ERROR][cloud-client]Function is:openapi_config_get_user_bind_code, Line is:677.config_get_user_bind_code Failed to lookup option bindCode.
+
+[INFO][cloud-service] init_config_info(564): hw_id:       9C09BC4DF198CCF158CEDAD8A5584B41
+
+[INFO][cloud-service] init_config_info(565): dev_id:      8021263781D41EC43D425528D05830E81FDEA5C9
+
+[INFO][cloud-service] init_config_info(566): dev_type:    SMART.IPCAMERA
+
+[INFO][cloud-service] init_config_info(567): dev_model:    C200
+
+[INFO][cloud-service] init_config_info(568): dev_alias:   Tapo_Camera_485E
+
+[INFO][cloud-service] init_config_info(569): dev_mac:     2887BA9D485E
+
+[INFO][cloud-service] init_config_info(570): dev_name:    C200
+
+[INFO][cloud-service] init_config_info(571): hw_ver:      2.0
+
+[INFO][cloud-service] init_config_info(572): fw_ver:      1.1.14 Build 210825 Rel.46672n(4555)
+
+[INFO][cloud-service] init_config_info(573): oem_id:      6C6C8A3E1B5801A276305D7B2FEFFF67
+
+[INFO][cloud-service] init_config_info(575): device_bind_status: 1
+
+[INFO][cloud-service] init_config_info(576): msg_push_switch: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] ubus_get_link_status_cb(296): long link is not established; link_status: 1, bind_state: 0
+
+not in ap mode, remove nf_conntrack_ipv4
+not in ap mode, no need to load ap_filter
+Command failed: Not found
+generate key: 3600days 2048bits
+[ERROR][cloud-service] ubus_get_link_status_cb(296): long link is not established; link_status: 1, bind_state: 0
+
+---WLAN---boot OK
+[ERROR][cloud-service] ubus_get_link_status_cb(296): long link is not established; link_status: 1, bind_state: 0
+
+---WLAN---get_cloud_status=0
+---WLAN---send event connected_cloudnotok
+[Debug] [setLedEvent:513] setLedEvent = 4
+[Debug] [main:660] gCurrLedEvent = 4
+[Debug] [setLedEvent:513] setLedEvent = 5
+[Debug] [main:660] gCurrLedEvent = 5
+[ERROR][cloud-service] ubus_get_link_status_cb(296): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][rtspd]dns.c:234(search_dns_cache) : dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(euw1-relay-dcipc.i.tplinknbu.com).
+now start cet...
+	 [storage] create_and_init_shm(134). creating initial shm...
+	 [storage] create_and_init_shm(137). shm creating succeeded, id: 65538, len:16960
+	 [storage] create_and_init_shm(148). shm mapped @0x77554000.
+	 [storage] create_and_init_sem(175). creating initial sem...
+	 [storage] wait_till_fs_ready(64). jffs is ready.
+Command failed: Unknown error
+umount: can't umount /tmp/mnt/harddisk_1: No such file or directory
+	 [storage] formatted_exec(70). system function error :No such file or directory
+
+	 [storage] do_umount(211). No such file or directory
+[ERROR][cloud-service] ubus_get_link_status_cb(296): long link is not established; link_status: 1, bind_state: 0
+
+== SENSOR TYPE: SC2336. ==[   29.028000] rtscam:begin to load fw from isp.fw
+
+[   29.151000] rtscam:Load firmware size : 131024.
+[   29.208000] rtscam:Found ISP 1.011 device
+[   29.237000] rtscam:video device <rts3903-isp> registered
+[   29.253000] rtscam:rts3903-isp initialized
+cannot find dbg_iomem, create it...
+[INFO][dn_switch][get_model_profile]-816: sensor: SC2336, load config: /tmp/base-files/etc/dn_switch_SC2336.ini
+sleep: invalid number '0.1'
+C200 2.0:smartir_enable
+C200 2.0:smartir_level
+name=C200 2.0
+led_cnt=1
+with_ldr=0
+irt_comm[0]={155,22}
+irt_comm[1]={134,17}
+irt_comm[2]={112,12}
+irt_comm[3]={90,8}
+irt_comm[4]={58,4}
+irt_comm[5]={53,3}
+irt_comm[6]={48,2}
+irt_comm[7]={44,1}
+ir_cut_day_gpio_num=1003
+ir_cut_night_gpio_num=1004
+ir_led_gpio_num=1000
+irt_ncomm={58,4}
+ir_delay=5
+gain_I={0.950000,0.970000}
+gain_N={1.320000,1.600000}
+natural_rate_thresh=0.050000
+thresh_no_adc={1500,1200,900,630,440,160,60,20}
+day_ae_compensation={0,0,0,0,0,0,0,0}
+day_ae_antiflicker_enable=1
+day_ae_antiflicker_freq=50
+night_ae_compensation=0
+night_ae_antiflicker_enable=0
+day_drc_asymmetry={20,17,14,11,8,4,0,0}
+night_drc_asymmetry={0,0,0,0,0,5,15,0}
+ae_gain_level={0,2,4,8,16,32,64,128}
+smartir_enable=0
+smartir_level=30
+day_auto_wdr_level=60
+night_auto_wdr_level=60
+Invalid sdcard device /dev/mmcblk0, please check configuration.
+	 [storage] formatted_exec(70). system function error :No such file or directory
+
+	 [storage] uci_load_single_disk(530). mounting disk 1 failed
+open /dev/crypto success
+	 [storage] update_disk_status_for_cet(363). ubus_lookup_id update_disk_status failed
+
+[2021-08-25 07:57:35][ERROR][cloud-client]Function is:recv_response_of_hello_cloud, Line is:235.1 times connectedToCloud:defaultSvr or cachedSvr helloCloud response
+
+[ERROR][cloud-service] ubus_get_link_status_cb(293): long link established but device is not bined; link_status: 2, bind_state: 0
+
+stream0 roi attr: 0 0 0 0 0 0
+[2021-08-25 07:57:35][ERROR][cloud-client]Function is:autoBindCloudResultHandle, Line is:435.++++++++++auto_bind callback errCode: 0++++++++++
+
+	 [storage] set_dev_bind_status(237). STM: device bind status: 1
+
+[ERROR][cloud-service] alarm_service_refresh_state(1021): service init is not ok
+
+{
+	"serviceInit": 0,
+	"serviceLevel": 0,
+	"is_service_Ok": 0,
+	"error_code": 0
+}
+---WLAN---get_cloud_status=1
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
+stream1 roi attr: 0 0 0 0 0 0
+[ERROR][cloud-service] ssl_connect_server(530): ssl connect failed, times: 100, status: 0.
+
+	 [storage] update_disk_status_for_cet(363). ubus_lookup_id update_disk_status failed
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(655): http_process failed.
+
+[ERROR][cloud-service] validate_token_thread(241): http_process_validate: waiting 10 seconds and trying 1 times.
+
+video_init done
+[INFO][cet][buffer_pool_alloc]-304: buffer audio queue id.
+
+	 [storage] init_stm_files_structure(144). sizeof(struct stm_file) = 72
+	 [storage] open_shm(305). exit open shm(shmprt:0x77f37000  shmlen:16960  flag = 0x1b6).
+	 [storage] open_sem(333). exit open sem(semid:32769, flag:0x1b4).
+	 [storage] data_sync_handle_thread(186). register signal handler on thread:0x76137500
+[ERROR][cet][reload_audio_record_cfg]-609: ENABLE record and clips audio!
+[INFO][cet][bq_register_record]-676: bq_register_record chn: 0, stream_t: 0, tid: 1980462336
+
+	 [storage] stm_open(1813). [0] stm_fd is allocated. channel = 0, type = video, flags = 0x1, mode = 0x1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[INFO][cet][input_h264_ch0_device_init]-526: Init H264 video device H264-ch0
+[INFO][cet][input_h264_ch1_device_init]-573: Init H264 video device H264-ch1
+[INFO][cet][input_jpeg_device_init]-602: Init jpeg device H264-ch2
+input_sound_device_init done
+bufq[0]: empty sig list. create one. The first thread id is 1979413760
+bufq[1]: empty sig list. create one. The first thread id is 1979413760
+bufq[2]: empty sig list. create one. The first thread id is 1979413760
+[INFO][cet][main]-1120: Server begin eventloop
+[INFO][cet][cet_ubus_init]-6236: connected as 0d4ac32f
+
+Play this stream using the URL "rtsp://192.168.1.48/stream1"
+Play this stream using the URL "rtsp://192.168.1.48/stream2"
+[INFO][cloud-service] dev_token_update(157): 	
+****SERVER INFO****
+		url:https://euw1-device-tapo-care.i.tplinknbu.com
+		protocol:HTTPS
+		host:euw1-device-tapo-care.i.tplinknbu.com
+		port:443
+		path:/
+
+[INFO][cloud-service] ubus_get_device_token_cb(373): SERVER INFO:
+		url:https://euw1-device-tapo-care.i.tplinknbu.com
+		protocol:HTTPS
+		host:euw1-device-tapo-care.i.tplinknbu.com
+		port:443
+		path:/
+
+[denoise_intf_create 147] denoise library. version: 1.3. time: 2019-12-27
+Table address = 0 
+8000 AECNS is created sucessfully 
+Sound goto normal mode
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[reload_timing_reboot_cfg]-268: random value: 1474s
+
+[INFO][2021-08-25 07:57:40] libsmart version: 1.3.0.374-3f7bb7d-master
+[INFO][dn_switch][dn_switch_auto_thread_no_adc]-1846: day thresh: 58, night threash: 4, delay: 5
+[INFO][dn_switch][dn_switch_auto_thread_no_adc]-1904: switch to night mode @ 0
+[ERROR][dn_switch][dn_switch_ctrl_vda]-1377: call vda disable/enable md/od failed
+[INFO][dn_switch][image_light_freq_mode_set]-1288: light freq mode:3
+
+[2021-08-25 07:57:40] nvid.c:main:150 - nvid started
+[2021-08-25 07:57:40] nvid.c:main:172 - signal_handler succeed
+[2021-08-25 07:57:40] nvid.c:main:193 - begin start onvif
+boot_done: mode_switch to wifi
+[ERROR][dn_switch][dn_switch_ctrl_vda]-1377: call vda disable/enable md/od failed
+---WLAN---get_cloud_status=0
+---WLAN---send event connected_cloudnotok
+[Debug] [setLedEvent:513] setLedEvent = 5
+[Debug] [main:660] gCurrLedEvent = 5
+[2021-08-25 07:57:41] nvid.c:main:200 - start onvif succeed
+[2021-08-25 07:57:41] nvid.c:main:214 - begin uloop run
+vda_ubus_register_dn_switch_event_handler 1099
+switch to wifi...
+--------call dhcp restart----
+killall: udhcpc: no process killed
+----------udhcpc start with 192.168.1.48--------
+update_network does nothing
+switch done
+[ERROR][cloud-service] ssl_connect_server(530): ssl connect failed, times: 100, status: 0.
+
+[ERROR][cloud-service] http_process_alarm(1101): error: failed to connect server name: euw1-device-tapo-care.i.tplinknbu.com -- server port: 443
+
+[ERROR][cloud-service] get_xtoken(745): http_process_serviceLevel failed.
+
+[ERROR][cloud-service] get_xtoken(759): http_process_alarm get serviceLevel: waiting 11 seconds and trying 1 times.
+
+update without switch...
+[2021-08-25 07:57:44][ERROR][cloud-client]Function is:recv_response_of_hello_cloud, Line is:235.2 times connectedToCloud:defaultSvr or cachedSvr helloCloud response
+
+switch done
+---WLAN---get_cloud_status=1
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
+[2021-08-25 07:57:45][ERROR][cloud-client]Function is:autoBindCloudResultHandle, Line is:435.++++++++++auto_bind callback errCode: 0++++++++++
+
+get dns form static dhcp:192.168.1.1, prev_append_dns:192.168.1.1
+no need to set append_dns
+	 [storage] set_dev_bind_status(237). STM: device bind status: 1
+
+[ERROR][cloud-service] alarm_service_refresh_state(1021): service init is not ok
+
+{
+	"serviceInit": 0,
+	"serviceLevel": 0,
+	"is_service_Ok": 0,
+	"error_code": 0
+}
+===insmod /lib/modules/3.10.27/gpio-motor.ko===
+[ERROR][cloud-servic[   41.596000] Registered character driver x-motor
+e] dev_token_is_valid(59): token[   41.614000] Registered character driver y-motor
+->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(655): http_process failed.
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
+[Debug] [main:700] The event is the same, don't do everything
+[ERROR][cloud-service] ssl_connect_server(530): ssl connect failed, times: 100, status: 0.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] validate_token_thread(241): http_process_validate: waiting 20 seconds and trying 2 times.
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(655): http_process failed.
+
+[ERROR][cet][ubus_restart_record]-1057: Call ubus_restart_record, maybe occur sync time.
+
+[ERROR][cloud-service] ssl_connect_server(530): ssl connect failed, times: 100, status: 0.
+
+[ERROR][cloud-service] http_process_alarm(1101): error: failed to connect server name: euw1-device-tapo-care.i.tplinknbu.com -- server port: 443
+
+[ERROR][cloud-service] get_xtoken(745): http_process_serviceLevel failed.
+
+[ERROR][cloud-service] get_xtoken(759): http_process_alarm get serviceLevel: waiting 22 seconds and trying 2 times.
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(655): http_process failed.
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+VDA wait motor cali fail
+VDA wait motor cali fail
+VDA wait motor cali fail
+[ERROR][cloud-service] read_value_from_uci_option(333): error: failed to get cloud_config:bind:bindCode.
+
+[INFO][cloud-service] dev_token_update(157): 	
+****SERVER INFO****
+		url:https://n-euw1-device-api.tplinkcloud.com
+		protocol:HTTPS
+		host:n-euw1-device-api.tplinkcloud.com
+		port:443
+		path:/
+
+[INFO][cloud-service] getDstLocalTime(441): dst_local_start:3.5.0/03:00:00, dst_local_end:10.5.0/04:00:00.
+
+{
+	"err_code": 0
+}
+[Debug] [setLedEvent:513] setLedEvent = 3
+[Debug] [main:660] gCurrLedEvent = 3
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 4
+[Debug] [main:660] gCurrLedEvent = 4
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
+[Debug] [setLedEvent:513] setLedEvent = 3
+[Debug] [main:660] gCurrLedEvent = 3
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 4
+[Debug] [main:660] gCurrLedEvent = 4
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
