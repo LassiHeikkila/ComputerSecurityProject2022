@@ -1,0 +1,247 @@
+
+
+U-Boot 2014.01-v1.2 (Aug 25 2021 - 12:36:20)
+
+Board: IPCAM RTS3903 CPU: 500M :rx5281 prid=0xdc02
+force spi nor mode
+DRAM:  64 MiB @ 1066 MHz
+Skipping flash_init
+Flash: 0 Bytes
+SF: Unsupported flash IDs: manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Using default environment
+
+Autobooting in 1 seconds
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Realtek PCIe GBE Family Controller mcfg = 0024
+no hw config header
+new_ethaddr = 00:00:23:34:45:66
+r8168#0
+Using default environment
+
+rlxboot# help
+?       - alias for 'help'
+base    - print or set address offset
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+cmp     - memory compare
+coninfo - print console devices and information
+cp      - memory copy
+crc32   - checksum calculation
+dma     - dma copy
+echo    - echo args to console
+editenv - edit environment variable
+efuse   - efuse readall | read addr
+env     - environment handling commands
+fephy   - fephy read/write
+go      - start application at address 'addr'
+help    - print command description/usage
+httpd   - httpd	- start www server for firmware recovery
+imxtract- extract a part of a multi-image
+jmpaddr - jmpaddr   - jump to a address
+
+loop    - infinite loop on address range
+md      - memory display
+mm      - memory modify (auto-incrementing address)
+mw      - memory write (fill)
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+saveenv - saveenv parameter to hconf partition
+setenv  - set environment variables
+setethaddr- set eth address
+setipaddr- set ip address
+sf      - SPI flash sub-system
+source  - run script from memory
+tftpboot- boot image via network using TFTP protocol
+tftpput - TFTP put command, for uploading files to a server
+tftpsrv - act as a TFTP server and boot the first received file
+update  - update image
+version - print monitor, compiler and linker version
+rlxboot# env
+env - environment handling commands
+
+Usage:
+env default [-f] -a - [forcibly] reset default environment
+env default [-f] var [...] - [forcibly] reset variable(s) to their default values
+env delete [-f] var [...] - [forcibly] delete variable(s)
+env edit name - edit environment variable
+env export [-t | -b | -c] [-s size] addr [var ...] - export environment
+env import [-d] [-t | -b | -c] addr [size] - import environment
+env print [-a | name ...] - print environment
+env set [-f] name [arg ...]
+
+rlxboot# env print -a
+addmisc=setenv bootargs ${bootargs}console=ttyS0,${baudrate}panic=1
+baudrate=57600
+bootaddr=(0xBC000000 + 0x120000)
+bootargs=console=ttyS1,57600 root=/dev/mtdblock6 rts-quadspi.channels=quad
+bootcmd=jmpaddr 0xbfc50000
+bootdelay=1
+bootfile=/vmlinux.img
+ethaddr=00:00:23:34:45:66
+gatewayip=192.168.0.1
+ipaddr=192.168.0.10
+load=tftp 80500000 ${u-boot}
+loadaddr=0x81500000
+netmask=255.255.255.0
+
+Environment size: 418/131068 bytes
+rlxboot# version
+
+U-Boot 2014.01-v1.2 (Aug 25 2021 - 12:36:20)
+mips-linux-uclibc-xgcc (Realtek RSDK-4.8.5p1 Build 2521) 4.8.5 20150209 (prerelease)
+GNU ld (Realtek RSDK-4.8.5p1 Build 2521) 2.24.0
+rlxboot# printenv
+addmisc=setenv bootargs ${bootargs}console=ttyS0,${baudrate}panic=1
+baudrate=57600
+bootaddr=(0xBC000000 + 0x120000)
+bootargs=console=ttyS1,57600 root=/dev/mtdblock6 rts-quadspi.channels=quad
+bootcmd=jmpaddr 0xbfc50000
+bootdelay=1
+bootfile=/vmlinux.img
+ethaddr=00:00:23:34:45:66
+gatewayip=192.168.0.1
+ipaddr=192.168.0.10
+load=tftp 80500000 ${u-boot}
+loadaddr=0x81500000
+netmask=255.255.255.0
+
+Environment size: 418/131068 bytes
+rlxboot# coninfo
+List of available devices:
+serial   80000003 SIO stdin stdout stderr 
+rlxboot# efuse
+efuse - efuse readall | read addr
+
+Usage:
+efuse read addr	- (from 0-23): read 1 byte data from addr in efuse.
+efuse readall	- read all data in efuse.
+
+rlxboot# efuse readall
+0xef, 0xbe, 0xad, 0xde, 0xef, 0xbe, 0xad, 0xde, 
+0xef, 0xbe, 0xad, 0xde, 0xef, 0xbe, 0xad, 0xde, 
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+rlxboot# fephy
+cmd wong
+rlxboot# fephy read
+rlxboot# httpd
+SF: Unsupported flash IDs: manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+SF: 10240 bytes @ 0x1d800 Read: OK
+HTTP server is ready!
+
+SF: Unsupported flash IDs: manuf 20, jedec 4017, ext_jedec 82fc
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+SF: 10240 bytes @ 0x1d800 Read: OK
+Attaching option 01 to list
+Attaching option 03 to list
+Attaching option 06 to list
+file: apps/dhcpd/dhcpd.c,line: 870==:dhcpd init OK. --debug by HouXB
+HTTP server is starting at IP: 192.168.0.10
+file: lib_uip.c,line: 115==:uip set a8c0-a00. --debug by HouXB
+file: lib_uip.c,line: 130==:start infinite loop! --debug by HouXB
+
+Web failsafe mode aborted!
+
+httpd - httpd	- start www server for firmware recovery
+
+Usage:
+httpd - No additional help available.
+rlxboot# help
+?       - alias for 'help'
+base    - print or set address offset
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+cmp     - memory compare
+coninfo - print console devices and information
+cp      - memory copy
+crc32   - checksum calculation
+dma     - dma copy
+echo    - echo args to console
+editenv - edit environment variable
+efuse   - efuse readall | read addr
+env     - environment handling commands
+fephy   - fephy read/write
+go      - start application at address 'addr'
+help    - print command description/usage
+httpd   - httpd	- start www server for firmware recovery
+imxtract- extract a part of a multi-image
+jmpaddr - jmpaddr   - jump to a address
+
+loop    - infinite loop on address range
+md      - memory display
+mm      - memory modify (auto-incrementing address)
+mw      - memory write (fill)
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+saveenv - saveenv parameter to hconf partition
+setenv  - set environment variables
+setethaddr- set eth address
+setipaddr- set ip address
+sf      - SPI flash sub-system
+source  - run script from memory
+tftpboot- boot image via network using TFTP protocol
+tftpput - TFTP put command, for uploading files to a server
+tftpsrv - act as a TFTP server and boot the first received file
+update  - update image
+version - print monitor, compiler and linker version
+rlxboot# sf
+sf - SPI flash sub-system
+
+Usage:
+sf probe [[bus:]cs] [hz] [mode]	- init flash device on given SPI bus
+				  and chip select
+sf read addr offset len	- read `len' bytes starting at
+				  `offset' to memory at `addr'
+sf write addr offset len	- write `len' bytes from memory
+				  at `addr' to flash at `offset'
+sf erase offset [+]len		- erase `len' bytes from `offset'
+				  `+len' round up `len' to block size
+sf update addr offset len	- erase and write `len' bytes from memory
+				  at `addr' to flash at `offset'
+sf test offset len		- run a very basic destructive test
+rlxboot# md
+md - memory display
+
+Usage:
+md [.b, .w, .l] address [# of objects]
+rlxboot# printenv
+addmisc=setenv bootargs ${bootargs}console=ttyS0,${baudrate}panic=1
+baudrate=57600
+bootaddr=(0xBC000000 + 0x120000)
+bootargs=console=ttyS1,57600 root=/dev/mtdblock6 rts-quadspi.channels=quad
+bootcmd=jmpaddr 0xbfc50000
+bootdelay=1
+bootfile=/vmlinux.img
+ethact=r8168#0
+ethaddr=28:87:ba:9d:48:5e
+gatewayip=192.168.0.1
+ipaddr=192.168.0.10
+load=tftp 80500000 ${u-boot}
+loadaddr=0x81500000
+netmask=255.255.255.0
+
+Environment size: 435/131068 bytes
+rlxboot# base
+Base Address: 0x00000000
+rlxboot# md
+md - memory display
+
+Usage:
+md [.b, .w, .l] address [# of objects]
+rlxboot# md .b 0 1
+md - memory display
+
+Usage:
+md [.b, .w, .l] address [# of objects]
+rlxboot# md .b 0 1.b 0 1 
+00000000:
