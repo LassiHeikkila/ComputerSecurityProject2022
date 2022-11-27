@@ -167,9 +167,13 @@ udp        0      0 0.0.0.0:38643           0.0.0.0:*                           
 We can see that telnet is running but only on the local interface, so it is not accessible remotely.
 
 ### U-Boot exploration
-U-boot boot process can be stopped by quickly entering `slp` when "Autobooting in <n> seconds" is displayed.
+U-boot boot process can be stopped by quickly entering `slp` when "Autobooting in x seconds" is displayed.
 
 Full u-boot shell exploration log can be found here: [uboot log](./logs/c200-fw-v1.1.14-uboot-shell.log)
+
+We can see that there are several useful commands available, such as `printenv`, `tftpboot` and `tfptput`.
+
+There are also commands for reading and writing the SPI flash memory, which is probably the most interesting part for us. It would be nice to download the entire firmware image from the device.
 
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
