@@ -224,16 +224,16 @@ So we can expect the following partitions:
 
 | begin | end | size (hex) | size (decimal) | name | note |
 | ----- | --- | ---------- | -------------- | ---- | ---- |
-| 0x000000000000 | 0x00000001d800 | 1d800 | 120832 | factory_boot | |
-| 0x00000001d800 | 0x000000020000 | 2800 | 10240 | factory_info | |
-| 0x000000020000 | 0x000000040000 | 20000 | 131072 | art | |
-| 0x000000040000 | 0x000000050000 | 10000 | 65536 | config | |
-| 0x000000050000 | 0x000000070000 | 20000 | 131072 | boot | |
-| 0x000000070000 | 0x0000001c1200 | 151200 | 1380864 | kernel | |
-| 0x0000001c1200 | 0x000000430000 | 26ee00 | 2551296 | rootfs | |
-| 0x000000430000 | 0x0000007ffe00 | 3cfe00 | 3997184 | rootfs_data | for overlayfs? |
-| 0x0000007ffe00 | 0x000000800000 | 200 | 512 | verify | why does this overlap with firmware? |
-| 0x000000070000 | 0x000000800000 | 790000 | 7929856 | firmware | maybe this is just a "virtual" partition |
+| `0x000000000000` | `0x00000001d800` | `1d800` | `120832` | `factory_boot` | |
+| `0x00000001d800` | `0x000000020000` | `2800` | `10240` | `factory_info` | |
+| `0x000000020000` | `0x000000040000` | `20000` | `131072` | `art` | |
+| `0x000000040000` | `0x000000050000` | `10000` | `65536` | `config` | |
+| `0x000000050000` | `0x000000070000` | `20000` | `131072` | `boot` | |
+| `0x000000070000` | `0x0000001c1200` | `151200` | `1380864` | `kernel` | |
+| `0x0000001c1200` | `0x000000430000` | `26ee00` | `2551296` | `rootfs` | |
+| `0x000000430000` | `0x0000007ffe00` | `3cfe00` | `3997184` | `rootfs_data` | for overlayfs? |
+| `0x0000007ffe00` | `0x000000800000` | `200` | `512` | `verify` | why does this overlap with firmware? |
+| `0x000000070000` | `0x000000800000` | `790000` | `7929856` | `firmware` | maybe this is just a "virtual" partition |
 
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
