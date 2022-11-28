@@ -1,11 +1,16 @@
 # Computer Security Project - Hacking TP-Link C200
-Course: `521253S`
+Project for course `521253S` at the University of Oulu.
+
+Aim: 
+- explore hardware hacking
+- try to gain root access to TP-Link C200 and [Inteno FG500]()
+- dump root filesystem
+- try to find vulnerabilities in the product(s)
 
 ## Group 
 Lassi Heikkilä `Y68725369`
 
-Mikko Isotalo `######`
-
+Mikko Isotalo `2264612`
 
 ## Initial exploration
 
