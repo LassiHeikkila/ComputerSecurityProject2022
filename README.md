@@ -230,10 +230,36 @@ So we can expect the following partitions:
 | `0x000000040000` | `0x000000050000` | `10000` | `65536` | `config` | |
 | `0x000000050000` | `0x000000070000` | `20000` | `131072` | `boot` | |
 | `0x000000070000` | `0x0000001c1200` | `151200` | `1380864` | `kernel` | |
-| `0x0000001c1200` | `0x000000430000` | `26ee00` | `2551296` | `rootfs` | |
+| `0x0000001c1200` | `0x000000430000` | `26ee00` | `2551296` | `rootfs` | squashfs based on boot logs |
 | `0x000000430000` | `0x0000007ffe00` | `3cfe00` | `3997184` | `rootfs_data` | for overlayfs? |
 | `0x0000007ffe00` | `0x000000800000` | `200` | `512` | `verify` | why does this overlap with firmware? |
 | `0x000000070000` | `0x000000800000` | `790000` | `7929856` | `firmware` | maybe this is just a "virtual" partition |
+
+#### Taking apart the `spi-flash.bin` based on partition table
+We can use `dd` to separate the partitions.
+
+Using block size 1 for input and output and specifying correct offset and size for the partition should be enough to extract a partition from the image. 
+
+It is possible to also use different block sizes for faster `dd` operation, but that is left as an exercise for the reader. It takes a few minutes to extract one of the bigger partitions with blocksize 1, but as a one time operation that is fine.
+
+So, e.g. to extract `config` partition, we can run the following command. Keep in mind that skip and count are given with base-10 integers.
+
+```console
+dd if=spi-flash.bin of=spi-flash-config.bin bs=1 skip=262144 count=65536
+```
+
+Extracted partitions:
+| partition name | link | notes |
+| -------------- | ---- | ----- |
+| `factory_boot` | [](./data/spi-flash-factory_boot.bin) |  |
+| `factory_info` | [](./data/spi-flash-factory_info.bin) | contains some plain strings |
+| `art` | [](./data/spi-flash-art.bin) |  |
+| `config` | [](./data/spi-flash-config.bin) |  |
+| `boot` | [](./data/spi-flash-boot.bin) |  |
+| `kernel` | [](./data/spi-flash-kernel.bin) |  |
+| `rootfs` | [](./data/spi-flash-rootfs.bin) |  |
+| `rootfs_data` | [](./data/spi-flash-rootfs_data.bin) |  |
+| `verify` | [](./data/spi-flash-verify.bin) |  |
 
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
