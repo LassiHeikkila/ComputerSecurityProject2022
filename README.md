@@ -251,15 +251,15 @@ dd if=spi-flash.bin of=spi-flash-config.bin bs=1 skip=262144 count=65536
 Extracted partitions:
 | partition name | link | notes |
 | -------------- | ---- | ----- |
-| `factory_boot` | [](./data/spi-flash-factory_boot.bin) |  |
-| `factory_info` | [](./data/spi-flash-factory_info.bin) | contains some plain strings |
-| `art` | [](./data/spi-flash-art.bin) |  |
-| `config` | [](./data/spi-flash-config.bin) |  |
-| `boot` | [](./data/spi-flash-boot.bin) |  |
-| `kernel` | [](./data/spi-flash-kernel.bin) |  |
-| `rootfs` | [](./data/spi-flash-rootfs.bin) |  |
-| `rootfs_data` | [](./data/spi-flash-rootfs_data.bin) |  |
-| `verify` | [](./data/spi-flash-verify.bin) |  |
+| `factory_boot` | [spi-flash-factory_boot.bin](./data/spi-flash-factory_boot.bin) |  |
+| `factory_info` | [spi-flash-factory_info.bin](./data/spi-flash-factory_info.bin) | contains some plain strings |
+| `art` | [spi-flash-art.bin](./data/spi-flash-art.bin) |  |
+| `config` | [spi-flash-config.bin](./data/spi-flash-config.bin) |  |
+| `boot` | [spi-flash-boot.bin](./data/spi-flash-boot.bin) |  |
+| `kernel` | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin) |  |
+| `rootfs` | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin) |  |
+| `rootfs_data` | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin) |  |
+| `verify` | [spi-flash-verify.bin](./data/spi-flash-verify.bin) |  |
 
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
