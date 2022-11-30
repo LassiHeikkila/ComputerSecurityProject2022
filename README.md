@@ -264,15 +264,73 @@ spi-flash-verify.bin: data
 
 So we know that `rootfs` and `rootfs_data` contain a `squashfs` filesystem, but nothing about the others.
 
+`binwalk` tells us that that some of the other partitions are compressed with LZMA or gzip:
+```console
+$ for img in spi-flash-*.bin; do echo "$img:" && binwalk -B $img; done
+spi-flash-art.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+256           0x100           gzip compressed data, from Unix, last modified: 2021-08-25 04:58:02
+
+spi-flash-boot.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+24576         0x6000          LZMA compressed data, properties: 0x5D, dictionary size: 8388608 bytes, uncompressed size: 120124 bytes
+
+spi-flash-config.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
+spi-flash-factory_boot.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+24576         0x6000          LZMA compressed data, properties: 0x5D, dictionary size: 8388608 bytes, uncompressed size: 219032 bytes
+
+spi-flash-factory_info.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
+spi-flash-kernel.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+512           0x200           LZMA compressed data, properties: 0x6D, dictionary size: 8388608 bytes, uncompressed size: 4112988 bytes
+
+spi-flash-rootfs.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Squashfs filesystem, little endian, version 4.0, compression:xz, size: 2499196 bytes, 789 inodes, blocksize: 131072 bytes, created: 2021-08-25 04:58:05
+
+spi-flash-rootfs_data.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Squashfs filesystem, little endian, version 4.0, compression:xz, size: 3568406 bytes, 298 inodes, blocksize: 131072 bytes, created: 2021-08-25 04:58:08
+3932672       0x3C0200        LZMA compressed data, properties: 0x6D, dictionary size: 8388608 bytes, uncompressed size: 4112988 bytes
+
+spi-flash-verify.bin:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+```
+
+So `boot`, `factory_boot`, and `kernel` have some LZMA compressed data, which we should be able to uncompress with `7z`.
+
 Extracted partitions:
 | partition name | link | notes |
 | -------------- | ---- | ----- |
-| `factory_boot` | [spi-flash-factory_boot.bin](./data/spi-flash-factory_boot.bin) |  |
+| `factory_boot` | [spi-flash-factory_boot.bin](./data/spi-flash-factory_boot.bin) | could this contain some more fancy u-boot? |
 | `factory_info` | [spi-flash-factory_info.bin](./data/spi-flash-factory_info.bin) | contains some plain strings |
-| `art` | [spi-flash-art.bin](./data/spi-flash-art.bin) |  |
+| `art` | [spi-flash-art.bin](./data/spi-flash-art.bin) | related to WiFi hardware |
 | `config` | [spi-flash-config.bin](./data/spi-flash-config.bin) |  |
-| `boot` | [spi-flash-boot.bin](./data/spi-flash-boot.bin) |  |
-| `kernel` | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin) |  |
+| `boot` | [spi-flash-boot.bin](./data/spi-flash-boot.bin) | probably u-boot binary |
+| `kernel` | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin) | kernel binary |
 | `rootfs` | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin) | squashfs |
 | `rootfs_data` | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin) | squashfs |
 | `verify` | [spi-flash-verify.bin](./data/spi-flash-verify.bin) |  |
