@@ -242,7 +242,7 @@ Using block size 1 for input and output and specifying correct offset and size f
 
 It is possible to also use different block sizes for faster `dd` operation, but that is left as an exercise for the reader. It takes a few minutes to extract one of the bigger partitions with blocksize 1, but as a one time operation that is fine.
 
-So, e.g. to extract `config` partition, we can run the following command. Keep in mind that skip and count are given with base-10 integers.
+So, e.g. to extract `config` partition, we can run the following command. Keep in mind that skip and count are given with base-10 integers here.
 
 ```console
 dd if=spi-flash.bin of=spi-flash-config.bin bs=1 skip=262144 count=65536
@@ -257,9 +257,582 @@ Extracted partitions:
 | `config` | [spi-flash-config.bin](./data/spi-flash-config.bin) |  |
 | `boot` | [spi-flash-boot.bin](./data/spi-flash-boot.bin) |  |
 | `kernel` | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin) |  |
-| `rootfs` | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin) |  |
+| `rootfs` | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin) | squashfs |
 | `rootfs_data` | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin) |  |
 | `verify` | [spi-flash-verify.bin](./data/spi-flash-verify.bin) |  |
+
+#### Inspecting `rootfs`
+We know that `rootfs` partition contains a [squashfs filesystem image]() based on boot logs.
+
+Thanks to [StackExchange](https://unix.stackexchange.com/a/80312), we can extract the filesystem from the partition image by running the following in a directory where we want to extract the filesystem to:
+```console
+unsquashfs spi-flash-rootfs.bin
+```
+
+This produces a lot of errors due to failing symbolic links, but it also produces a directory called `squashfs-root`, containing our filesystem.
+```
+$ tree .
+.
+├── bin
+│   ├── busybox
+│   ├── cloud-brd
+│   ├── cloud-client
+│   ├── cloud-service
+│   ├── cmd_dsd.sh
+│   ├── ipcalc.sh
+│   ├── logControl.sh
+│   ├── login.sh
+│   ├── mmc_test
+│   ├── rts_set_gpio
+│   ├── tapo_kill.sh
+│   ├── timezone.sh
+│   ├── tp_manage
+│   ├── ubus
+│   └── uc_convert
+├── dev
+├── etc
+│   ├── banner
+│   ├── cloud-client
+│   │   └── 2048_newroot.cer
+│   ├── cloud-sdk
+│   │   ├── 2048_newroot.cer
+│   │   ├── cloud_config.cfg
+│   │   └── cloud_service.cfg
+│   ├── cloud_service
+│   │   └── ipc_service.cer
+│   ├── crontabs
+│   ├── default
+│   │   ├── hostapd.accept
+│   │   ├── hostapd_default.conf
+│   │   └── hostapd.deny
+│   ├── diag.sh
+│   ├── dsd_convert.json
+│   ├── group
+│   ├── hosts
+│   ├── hotplug2-common.rules
+│   ├── hotplug2-init.rules
+│   ├── hotplug2.rules
+│   ├── hotplug.d
+│   │   ├── block
+│   │   │   └── 10-mmc
+│   │   ├── button
+│   │   │   ├── 00-button
+│   │   │   └── 10-reset
+│   │   ├── ieee1394
+│   │   │   └── 10-ieee1394
+│   │   ├── iface
+│   │   │   ├── 00-netstate
+│   │   │   ├── 10-sysctl
+│   │   │   ├── 30-multicast-routing
+│   │   │   ├── 70-cloud
+│   │   │   └── 80-upnpc
+│   │   └── usb
+│   │       └── 10-usb
+│   ├── init.d
+│   │   ├── boot
+│   │   ├── cfgdev_info
+│   │   ├── cfgmac
+│   │   ├── check_dup_list_from_update
+│   │   ├── check_upgrade
+│   │   ├── cloud_client
+│   │   ├── cloud_sdk
+│   │   ├── cloud_service
+│   │   ├── done
+│   │   ├── dsd
+│   │   ├── firewall
+│   │   ├── is_cal.script
+│   │   ├── ledd
+│   │   ├── luci_fixtime
+│   │   ├── msglog
+│   │   ├── netlinkd
+│   │   ├── network
+│   │   ├── rcS
+│   │   ├── recover-manager
+│   │   ├── sysctl
+│   │   ├── sysfixtime
+│   │   ├── sysntpd
+│   │   ├── system_state_audio
+│   │   ├── tp_manage
+│   │   ├── ubus
+│   │   ├── udhcpd
+│   │   ├── uhttpd
+│   │   ├── umount
+│   │   ├── wlan
+│   │   └── wlan-manager
+│   ├── inittab
+│   ├── modules.d
+│   │   ├── 19-k_netlink_ipc
+│   │   ├── 1-k_hi_reset
+│   │   ├── 20-lib-textsearch
+│   │   ├── 40-ipt-core
+│   │   ├── 41-ipt-conntrack
+│   │   ├── 45-ipt-filter
+│   │   ├── 50-cryptodev
+│   │   └── 63-port_status_notify
+│   ├── netlink.d
+│   │   ├── host_data_collect
+│   │   │   └── notify_cloud
+│   │   ├── lan_status_notify
+│   │   │   └── cleanTMP.sh
+│   │   └── wan_status_notify
+│   │       ├── 10-wifi-ethernet-switch
+│   │       └── 20-auto_down_wan
+│   ├── openwrt_release
+│   ├── openwrt_version
+│   ├── passwd
+│   ├── preinit
+│   ├── profile
+│   ├── protocols
+│   ├── rc.common
+│   ├── rc.d
+│   ├── rc.local
+│   ├── root.cer
+│   ├── rtl
+│   │   ├── 8188FTV_mask.txt
+│   │   ├── PHY_REG_PG.txt
+│   │   └── wifi_efuse_8188fu.map
+│   ├── services
+│   ├── shadow
+│   ├── shells
+│   ├── sys_conf_data
+│   ├── sysctl.conf
+│   ├── sysupgrade.conf
+│   ├── tp_manage
+│   │   ├── priv-key.pem
+│   │   └── server-cert.pem
+│   └── usr_conf_data
+├── lib
+│   ├── config
+│   │   └── uci.sh
+│   ├── configs
+│   ├── firstboot
+│   │   ├── 05_firstboot_skip
+│   │   ├── 10_determine_parts
+│   │   ├── 10_no_fo_clear_overlay
+│   │   ├── 10_reset_has_mini_fo
+│   │   ├── 20_has_mini_fo
+│   │   ├── 20_no_fo_mount_jffs
+│   │   ├── 20_reset_clear_jffs
+│   │   ├── 30_is_rootfs_mounted
+│   │   ├── 30_no_fo_pivot
+│   │   ├── 30_reset_copy_rom
+│   │   ├── 40_copy_ramoverlay
+│   │   ├── 40_no_fo_copy_ramoverlay
+│   │   ├── 50_pivot
+│   │   ├── 99_10_no_fo_cleanup
+│   │   └── 99_10_with_fo_cleanup
+│   ├── functions
+│   │   ├── boot.sh
+│   │   ├── get_region_code.sh
+│   │   ├── network.sh
+│   │   ├── parse_uci_config.sh
+│   │   ├── service.sh
+│   │   └── uci-defaults.sh
+│   ├── functions.sh
+│   ├── ld-uClibc-0.9.33.so
+│   ├── libblobmsg_json.so
+│   ├── libcrypt-0.9.33.so
+│   ├── libdl-0.9.33.so
+│   ├── libgcc_s.so.1
+│   ├── libiniparser.so
+│   ├── libm-0.9.33.so
+│   ├── libpthread-0.9.33.so
+│   ├── libpthread.so
+│   ├── librt-0.9.33.so
+│   ├── libsecurity.so
+│   ├── libubox.so
+│   ├── libubus.so
+│   ├── libuci.so
+│   ├── libuClibc-0.9.33.so
+│   ├── modules
+│   │   └── 3.10.27
+│   │       ├── 8188fu.ko
+│   │       ├── cryptodev.ko
+│   │       ├── gpio_leds.ko
+│   │       ├── gpio-motor.ko
+│   │       ├── k_hi_reset.ko
+│   │       ├── k_netlink_ipc.ko
+│   │       ├── port_status_notify.ko
+│   │       ├── ts_bm.ko
+│   │       ├── ts_fsm.ko
+│   │       ├── ts_kmp.ko
+│   │       ├── xt_conntrack.ko
+│   │       ├── xt_mac.ko
+│   │       ├── xt_multiport.ko
+│   │       ├── xt_state.ko
+│   │       └── xt_string.ko
+│   ├── netifd
+│   │   ├── common_api.sh
+│   │   ├── dhcp.script
+│   │   ├── mode_switch.sh
+│   │   ├── netifd-proto.sh
+│   │   ├── proto
+│   │   │   └── dhcp.sh
+│   │   ├── smart_lan_ip.sh
+│   │   ├── static-dhcp.script
+│   │   ├── static_dhcp_start.sh
+│   │   └── static_dhcp_stop.sh
+│   ├── network
+│   │   └── config.sh
+│   ├── preinit
+│   │   ├── 05_mount_skip
+│   │   ├── 10_check_for_mtd
+│   │   ├── 10_essential_fs
+│   │   ├── 10_indicate_preinit
+│   │   ├── 20_check_jffs2_ready
+│   │   ├── 20_device_fs_mount
+│   │   ├── 30_device_fs_daemons
+│   │   ├── 40_dont_mount_jffs2
+│   │   ├── 40_init_shm
+│   │   ├── 40_mount_devpts
+│   │   ├── 50_choose_console
+│   │   ├── 60_init_hotplug
+│   │   ├── 70_pivot_jffs2_root
+│   │   ├── 80_mount_root
+│   │   ├── 90_init_console
+│   │   ├── 90_mount_no_jffs2
+│   │   ├── 99_10_mount_no_mtd
+│   │   ├── 99_10_read_uc_data
+│   │   └── 99_10_run_init
+│   └── upgrade
+│       ├── common.sh
+│       ├── keep.d
+│       │   ├── base-files
+│       │   ├── base-files-essential
+│       │   └── uhttpd
+│       └── luci-add-conffiles.sh
+├── mnt
+├── overlay
+├── proc
+├── rom
+│   └── note
+├── root
+├── sbin
+│   ├── debug_ir_cut_switch_test.sh
+│   ├── debug_ptz_test.sh
+│   ├── debug_speaker_test.sh
+│   ├── devstatus
+│   ├── factorywrite
+│   ├── firstboot
+│   ├── fw
+│   ├── hotplug2
+│   ├── hotplug-call
+│   ├── ifstatus
+│   ├── ifup
+│   ├── led.sh
+│   ├── luci-reload
+│   ├── mount_root
+│   ├── msglogd
+│   ├── mtd
+│   ├── netifd
+│   ├── slprestore
+│   ├── slpupgrade
+│   ├── sound
+│   ├── sysupgrade
+│   ├── track-reload
+│   ├── ubusd
+│   ├── uci
+│   ├── udevtrigger
+│   ├── wget2nand
+│   └── wifi
+├── sp_rom
+├── sys
+├── tmp
+│   └── log
+├── usr
+│   ├── bin
+│   │   ├── cloudMode.sh
+│   │   ├── cloud_upgrade
+│   │   ├── consoleredict
+│   │   ├── curl
+│   │   ├── dsd
+│   │   ├── dsd_exec
+│   │   ├── get_new_fwinfo
+│   │   ├── get_sys_status
+│   │   ├── jshn
+│   │   ├── ledd
+│   │   ├── onboarding
+│   │   ├── recover-manager
+│   │   ├── resolveip
+│   │   └── tp_event.sh
+│   ├── lib
+│   │   ├── libaes.so
+│   │   ├── libcommon.so
+│   │   ├── libcrypto.so.1.0.0
+│   │   ├── libcurl.so.4.3.0
+│   │   ├── libdecrypter.so
+│   │   ├── libdsd_client.so
+│   │   ├── libiconv.so.2.4.0
+│   │   ├── libip4tc.so.0.0.0
+│   │   ├── libiwinfo.so
+│   │   ├── libjson.so.0.0.1
+│   │   ├── libmediautil.so
+│   │   ├── libmsglog.sh
+│   │   ├── libmsglog.so
+│   │   ├── libnl-tiny.so
+│   │   ├── libpwr.so
+│   │   ├── libssl.so.1.0.0
+│   │   ├── libuciassist.so
+│   │   ├── libwlanmanager.so
+│   │   ├── libwlanubus.so
+│   │   ├── libwpactrl.so
+│   │   ├── libz.so.1.2.7
+│   │   ├── lua
+│   │   │   ├── iwinfo.so
+│   │   │   ├── libmsglog.lua
+│   │   │   ├── luci
+│   │   │   │   └── torchlight
+│   │   │   │       └── tp_event.lua
+│   │   │   ├── ubus.so
+│   │   │   └── uci.so
+│   │   ├── opkg
+│   │   │   ├── info
+│   │   │   │   ├── alsa.control
+│   │   │   │   ├── alsa-lib.control
+│   │   │   │   ├── alsa-lib.list
+│   │   │   │   ├── alsa.list
+│   │   │   │   ├── base-files.conffiles
+│   │   │   │   ├── base-files.control
+│   │   │   │   ├── base-files.list
+│   │   │   │   ├── busybox.control
+│   │   │   │   ├── busybox.list
+│   │   │   │   ├── cet.control
+│   │   │   │   ├── cet.list
+│   │   │   │   ├── chn_info.control
+│   │   │   │   ├── chn_info.list
+│   │   │   │   ├── cloud-brd.control
+│   │   │   │   ├── cloud-brd.list
+│   │   │   │   ├── cloud-sdk.control
+│   │   │   │   ├── cloud-sdk.list
+│   │   │   │   ├── cloud-service.control
+│   │   │   │   ├── cloud-service.list
+│   │   │   │   ├── config_dev_info.control
+│   │   │   │   ├── config_dev_info.list
+│   │   │   │   ├── config_mac.control
+│   │   │   │   ├── config_mac.list
+│   │   │   │   ├── connMode.control
+│   │   │   │   ├── connMode.list
+│   │   │   │   ├── curl.control
+│   │   │   │   ├── curl.list
+│   │   │   │   ├── diagnose.control
+│   │   │   │   ├── diagnose.list
+│   │   │   │   ├── dn_switch.control
+│   │   │   │   ├── dn_switch.list
+│   │   │   │   ├── dosfstools.control
+│   │   │   │   ├── dosfstools.list
+│   │   │   │   ├── dsd.control
+│   │   │   │   ├── dsd.list
+│   │   │   │   ├── factory_restore.control
+│   │   │   │   ├── factory_restore.list
+│   │   │   │   ├── firewall_ipc.conffiles
+│   │   │   │   ├── firewall_ipc.control
+│   │   │   │   ├── firewall_ipc.list
+│   │   │   │   ├── firmware_upgrade.control
+│   │   │   │   ├── firmware_upgrade.list
+│   │   │   │   ├── hotplug2.conffiles
+│   │   │   │   ├── hotplug2.control
+│   │   │   │   ├── hotplug2.list
+│   │   │   │   ├── iperf-mt.control
+│   │   │   │   ├── iperf-mt.list
+│   │   │   │   ├── iptables.control
+│   │   │   │   ├── iptables.list
+│   │   │   │   ├── iptables-mod-filter.control
+│   │   │   │   ├── iptables-mod-filter.list
+│   │   │   │   ├── iptables-mod-iprange.control
+│   │   │   │   ├── iptables-mod-iprange.list
+│   │   │   │   ├── jshn.control
+│   │   │   │   ├── jshn.list
+│   │   │   │   ├── kernel.control
+│   │   │   │   ├── kernel.list
+│   │   │   │   ├── kmod-cryptodev.control
+│   │   │   │   ├── kmod-cryptodev.list
+│   │   │   │   ├── kmod-ipt-conntrack.control
+│   │   │   │   ├── kmod-ipt-conntrack.list
+│   │   │   │   ├── kmod-ipt-core.control
+│   │   │   │   ├── kmod-ipt-core.list
+│   │   │   │   ├── kmod-ipt-filter.control
+│   │   │   │   ├── kmod-ipt-filter.list
+│   │   │   │   ├── kmod-k_hi_reset.control
+│   │   │   │   ├── kmod-k_hi_reset.list
+│   │   │   │   ├── kmod-k_netlink_ipc.control
+│   │   │   │   ├── kmod-k_netlink_ipc.list
+│   │   │   │   ├── kmod-lib-crc-ccitt.control
+│   │   │   │   ├── kmod-lib-crc-ccitt.list
+│   │   │   │   ├── kmod-lib-textsearch.control
+│   │   │   │   ├── kmod-lib-textsearch.list
+│   │   │   │   ├── kmod-port_status_notify.control
+│   │   │   │   ├── kmod-port_status_notify.list
+│   │   │   │   ├── kmod-rtl8188fu.control
+│   │   │   │   ├── kmod-rtl8188fu.list
+│   │   │   │   ├── ledd.control
+│   │   │   │   ├── ledd.list
+│   │   │   │   ├── libblobmsg-json.control
+│   │   │   │   ├── libblobmsg-json.list
+│   │   │   │   ├── libc.control
+│   │   │   │   ├── libc.list
+│   │   │   │   ├── libcurl.control
+│   │   │   │   ├── libcurl.list
+│   │   │   │   ├── libdecrypter.control
+│   │   │   │   ├── libdecrypter.list
+│   │   │   │   ├── libevent.control
+│   │   │   │   ├── libevent.list
+│   │   │   │   ├── libfreetype.control
+│   │   │   │   ├── libfreetype.list
+│   │   │   │   ├── libgcc.control
+│   │   │   │   ├── libgcc.list
+│   │   │   │   ├── libiconv-full.control
+│   │   │   │   ├── libiconv-full.list
+│   │   │   │   ├── libiniparser.control
+│   │   │   │   ├── libiniparser.list
+│   │   │   │   ├── libip4tc.control
+│   │   │   │   ├── libip4tc.list
+│   │   │   │   ├── libiwinfo.control
+│   │   │   │   ├── libiwinfo.list
+│   │   │   │   ├── libiwinfo-lua.control
+│   │   │   │   ├── libiwinfo-lua.list
+│   │   │   │   ├── libjson.control
+│   │   │   │   ├── libjson.list
+│   │   │   │   ├── liblua.control
+│   │   │   │   ├── liblua.list
+│   │   │   │   ├── libmediautil.control
+│   │   │   │   ├── libmediautil.list
+│   │   │   │   ├── libminiupnpc.control
+│   │   │   │   ├── libminiupnpc.list
+│   │   │   │   ├── libncurses.control
+│   │   │   │   ├── libncurses.list
+│   │   │   │   ├── libnl-tiny.control
+│   │   │   │   ├── libnl-tiny.list
+│   │   │   │   ├── libopenssl.control
+│   │   │   │   ├── libopenssl.list
+│   │   │   │   ├── libpcap.control
+│   │   │   │   ├── libpcap.list
+│   │   │   │   ├── libpng.control
+│   │   │   │   ├── libpng.list
+│   │   │   │   ├── libpthread.control
+│   │   │   │   ├── libpthread.list
+│   │   │   │   ├── libpwr.control
+│   │   │   │   ├── libpwr.list
+│   │   │   │   ├── librt.control
+│   │   │   │   ├── librt.list
+│   │   │   │   ├── libsecurity.control
+│   │   │   │   ├── libsecurity.list
+│   │   │   │   ├── libsyslog.control
+│   │   │   │   ├── libsyslog.list
+│   │   │   │   ├── libubox.control
+│   │   │   │   ├── libubox.list
+│   │   │   │   ├── libubus.control
+│   │   │   │   ├── libubus.list
+│   │   │   │   ├── libubus-lua.control
+│   │   │   │   ├── libubus-lua.list
+│   │   │   │   ├── libuci.control
+│   │   │   │   ├── libuci.list
+│   │   │   │   ├── libuci-lua.control
+│   │   │   │   ├── libuci-lua.list
+│   │   │   │   ├── libxtables.control
+│   │   │   │   ├── libxtables.list
+│   │   │   │   ├── lua.control
+│   │   │   │   ├── lua.list
+│   │   │   │   ├── miniupnpc.control
+│   │   │   │   ├── miniupnpc.list
+│   │   │   │   ├── motord.control
+│   │   │   │   ├── motord.list
+│   │   │   │   ├── mtd.control
+│   │   │   │   ├── mtd.list
+│   │   │   │   ├── netifd.control
+│   │   │   │   ├── netifd.list
+│   │   │   │   ├── nvid.control
+│   │   │   │   ├── nvid.list
+│   │   │   │   ├── onboarding.control
+│   │   │   │   ├── onboarding.list
+│   │   │   │   ├── onvif.control
+│   │   │   │   ├── onvif.list
+│   │   │   │   ├── openssl-util.conffiles
+│   │   │   │   ├── openssl-util.control
+│   │   │   │   ├── openssl-util.list
+│   │   │   │   ├── p2pd.control
+│   │   │   │   ├── p2pd.list
+│   │   │   │   ├── public.control
+│   │   │   │   ├── public.list
+│   │   │   │   ├── realtek_isp_tuning.control
+│   │   │   │   ├── realtek_isp_tuning.list
+│   │   │   │   ├── realtek_mpp.control
+│   │   │   │   ├── realtek_mpp.list
+│   │   │   │   ├── realtek_tools.control
+│   │   │   │   ├── realtek_tools.list
+│   │   │   │   ├── recover-manager.control
+│   │   │   │   ├── recover-manager.list
+│   │   │   │   ├── resolveip.control
+│   │   │   │   ├── resolveip.list
+│   │   │   │   ├── rtl-hostapd.control
+│   │   │   │   ├── rtl-hostapd.list
+│   │   │   │   ├── rtl-wpa-supplicant.control
+│   │   │   │   ├── rtl-wpa-supplicant.list
+│   │   │   │   ├── smart_lan_ip.control
+│   │   │   │   ├── smart_lan_ip.list
+│   │   │   │   ├── storage_manager.control
+│   │   │   │   ├── storage_manager.list
+│   │   │   │   ├── syslog.control
+│   │   │   │   ├── syslog.list
+│   │   │   │   ├── system_state_audio.control
+│   │   │   │   ├── system_state_audio.list
+│   │   │   │   ├── tp_manage.control
+│   │   │   │   ├── tp_manage.list
+│   │   │   │   ├── t_relayd.control
+│   │   │   │   ├── t_relayd.list
+│   │   │   │   ├── t_rtspd.control
+│   │   │   │   ├── t_rtspd.list
+│   │   │   │   ├── ubus.control
+│   │   │   │   ├── ubusd.control
+│   │   │   │   ├── ubusd.list
+│   │   │   │   ├── ubus.list
+│   │   │   │   ├── uc_convert.control
+│   │   │   │   ├── uc_convert.list
+│   │   │   │   ├── uci.control
+│   │   │   │   ├── uci.list
+│   │   │   │   ├── uclibcxx.control
+│   │   │   │   ├── uclibcxx.list
+│   │   │   │   ├── udt.control
+│   │   │   │   ├── udt.list
+│   │   │   │   ├── uhttpd.conffiles
+│   │   │   │   ├── uhttpd.control
+│   │   │   │   ├── uhttpd.list
+│   │   │   │   ├── uhttpd-mod-tls.control
+│   │   │   │   ├── uhttpd-mod-tls.list
+│   │   │   │   ├── u_netlink_ipc.control
+│   │   │   │   ├── u_netlink_ipc.list
+│   │   │   │   ├── vda.control
+│   │   │   │   ├── vda.list
+│   │   │   │   ├── wireless-tools-rtl.control
+│   │   │   │   ├── wireless-tools-rtl.list
+│   │   │   │   ├── wlan-manager.control
+│   │   │   │   ├── wlan-manager.list
+│   │   │   │   ├── wtd.control
+│   │   │   │   ├── wtd.list
+│   │   │   │   ├── zlib.control
+│   │   │   │   └── zlib.list
+│   │   │   ├── lists
+│   │   │   └── status
+│   │   └── uhttpd_tls.so
+│   ├── sbin
+│   │   ├── connModed
+│   │   ├── fdisk_sd_card
+│   │   ├── iwconfig
+│   │   ├── makeRoomForUpgrade.sh
+│   │   ├── mount_disk
+│   │   ├── mount_nas
+│   │   ├── nfsroot
+│   │   ├── test_nas
+│   │   ├── wlan-manager
+│   │   └── wpa_supplicant
+│   └── share
+│       ├── libubox
+│       │   └── jshn.sh
+│       └── udhcpc
+│           └── default.script
+└── www
+
+60 directories, 497 files
+```
 
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
