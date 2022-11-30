@@ -248,6 +248,22 @@ So, e.g. to extract `config` partition, we can run the following command. Keep i
 dd if=spi-flash.bin of=spi-flash-config.bin bs=1 skip=262144 count=65536
 ```
 
+We can also try to figure out what is contained on all of the partitions:
+```console
+$ for img in spi-flash-*.bin; do file $img; done
+spi-flash-art.bin: data
+spi-flash-boot.bin: data
+spi-flash-config.bin: data
+spi-flash-factory_boot.bin: data
+spi-flash-factory_info.bin: data
+spi-flash-kernel.bin: data
+spi-flash-rootfs.bin: Squashfs filesystem, little endian, version 4.0, xz compressed, 2499196 bytes, 789 inodes, blocksize: 131072 bytes, created: Wed Aug 25 04:58:05 2021
+spi-flash-rootfs_data.bin: Squashfs filesystem, little endian, version 4.0, xz compressed, 3568406 bytes, 298 inodes, blocksize: 131072 bytes, created: Wed Aug 25 04:58:08 2021
+spi-flash-verify.bin: data
+```
+
+So we know that `rootfs` and `rootfs_data` contain a `squashfs` filesystem, but nothing about the others.
+
 Extracted partitions:
 | partition name | link | notes |
 | -------------- | ---- | ----- |
@@ -258,7 +274,7 @@ Extracted partitions:
 | `boot` | [spi-flash-boot.bin](./data/spi-flash-boot.bin) |  |
 | `kernel` | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin) |  |
 | `rootfs` | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin) | squashfs |
-| `rootfs_data` | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin) |  |
+| `rootfs_data` | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin) | squashfs |
 | `verify` | [spi-flash-verify.bin](./data/spi-flash-verify.bin) |  |
 
 #### Inspecting `rootfs`
