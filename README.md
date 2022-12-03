@@ -331,7 +331,7 @@ Extracted partitions:
 | `factory_boot` | [spi-flash-factory_boot.bin](./data/spi-flash-factory_boot.bin) | could this contain some more fancy u-boot? |
 | `factory_info` | [spi-flash-factory_info.bin](./data/spi-flash-factory_info.bin) | contains some plain strings |
 | `art` | [spi-flash-art.bin](./data/spi-flash-art.bin) | related to WiFi hardware |
-| `config` | [spi-flash-config.bin](./data/spi-flash-config.bin) |  |
+| `config` | [spi-flash-config.bin](./data/spi-flash-config.bin) | possibly encrypted data |
 | `boot` | [spi-flash-boot.bin](./data/spi-flash-boot.bin) | probably u-boot binary |
 | `kernel` | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin) | kernel binary |
 | `rootfs` | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin) | squashfs |
