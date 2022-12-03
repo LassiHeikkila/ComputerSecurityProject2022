@@ -322,6 +322,9 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 So `boot`, `factory_boot`, and `kernel` have some LZMA compressed data, which we should be able to uncompress with `7z`.
 
+`config` partition doesn't contain any parts that `file` or `binwalk` are able to recognize, while `binwalk` entropy plot shows that the beginning of the partition containing data has very high entropy, so it may be encrypted.
+![](screenshots/spi-flash-config-entropy.png)
+
 Extracted partitions:
 | partition name | link | notes |
 | -------------- | ---- | ----- |
@@ -335,7 +338,7 @@ Extracted partitions:
 | `rootfs_data` | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin) | squashfs |
 | `verify` | [spi-flash-verify.bin](./data/spi-flash-verify.bin) |  |
 
-#### Inspecting `rootfs`
+#### Extracting the root filesystem
 We know that `rootfs` partition contains a [squashfs filesystem image]() based on boot logs.
 
 Thanks to [StackExchange](https://unix.stackexchange.com/a/80312), we can extract the filesystem from the partition image by running the following in a directory where we want to extract the filesystem to:
@@ -907,6 +910,121 @@ $ tree .
 
 60 directories, 497 files
 ```
+
+#### `libdecrypt.so`
+There is an interesting looking dynamic library found in `/usr/lib/libdecrypter.so`.
+`binwalk` tells us that it contains an RSA private key.
+```console
+$ binwalk -B libdecrypter.so
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             ELF, 32-bit LSB MIPS-I shared object, MIPS, version 1 (SYSV)
+5952          0x1740          Base64 standard index table
+6304          0x18A0          PEM RSA private key
+```
+However, that is a false detection. What `binwalk` actually detected was a formatting string containing the RSA key header:
+```
+-----BEGIN RSA PRIVATE KEY-----
+```
+
+Still, it's nice to see that maybe we can find something interesting from this shared object.
+
+Dumping the `strings` from the file yields the following:
+```console
+$ strings libdecrypter.so
+_init
+_gp_disp
+_fini
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+_Jv_RegisterClasses
+libcrypto.so.1.0.0
+libmsglog.so
+rsa_base64_encode
+rsa_base64_encode_alloc
+malloc
+rsa_isbase64
+rsa_base64_decode
+rsa_base64_decode_alloc
+sprintf
+strlen
+strcpy
+rsa_encrypt
+msglog
+BIO_new_mem_buf
+PEM_read_bio_RSA_PUBKEY
+RSA_public_encrypt
+calloc
+memcpy
+RSA_free
+BIO_free_all
+PEM_read_bio_RSAPrivateKey
+RSA_private_decrypt
+rsa_decrypt
+libc.so.0
+_ftext
+_fdata
+_edata
+__bss_start
+_fbss
+_end
+ 	9'l
+1!@H
+0!(E
+0!(E
+$!(@
+$!0`
+'!(`
+'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+?456789:;<=
+ !"#$%&'()*+,-./0123
+-----BEGIN PUBLIC KEY-----
+-----BEGIN RSA PRIVATE KEY-----
+-----END PUBLIC KEY-----
+-----END RSA PRIVATE KEY-----
+DECRYPTER
+Wrong input. plaintext_len %d.
+Base64 decode public key error.
+Create BIO buffer for public key error.
+call RSA_public_encrypt failed
+Base64 encode ciphertext error.
+Malloc for ciphertext_out failed.
+wrong input. ciphertext_len %d.
+Base64 decode ciphtertext error.
+Calloc mem error.
+MIICXAIBAAKBgQC4D6i0o...part of the key redacted...QmIseOs9f0=
+MIGfMA0GCSqGSIb3DQEBA...part of the key redacted...rtZQQIDAQAB
+MIGfMA0GCSqGSIb3DQEBA...part of the key redacted...yYVbQIDAQAB
+GCC: (GNU) 3.3.2
+GCC: (Realtek RSDK-4.8.5p1 Build 2521) 4.8.5 20150209 (prerelease)
+.shstrtab
+.note.gnu.build-id
+.dynamic
+.hash
+.dynsym
+.dynstr
+.rel.dyn
+.init
+.text
+.MIPS.stubs
+.fini
+.rodata
+.eh_frame
+.ctors
+.dtors
+.jcr
+.data
+.got
+.sdata
+.bss
+.comment
+.gnu.attributes
+.mdebug.abi32
+
+```
+There are a few strings that look an awful lot like public or private RSA keys.
 
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
