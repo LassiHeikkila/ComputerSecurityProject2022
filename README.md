@@ -1026,6 +1026,8 @@ GCC: (Realtek RSDK-4.8.5p1 Build 2521) 4.8.5 20150209 (prerelease)
 ```
 There are a few strings that look an awful lot like public or private RSA keys.
 
+After some experimenting with `openssl`, we determined that the private key and the second public key are a pair.
+
 ## References
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
 [tp-link-tapo-c200-unauthenticated-rce](https://www.hacefresko.com/posts/tp-link-tapo-c200-unauthenticated-rce).
