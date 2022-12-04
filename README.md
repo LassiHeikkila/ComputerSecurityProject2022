@@ -222,18 +222,18 @@ We can find the partition sizes and offsets from the [boot log](./logs/c200-fw-v
 
 So we can expect the following partitions:
 
-| begin | end | size (hex) | size (decimal) | name | note |
-| ----- | --- | ---------- | -------------- | ---- | ---- |
-| `0x000000000000` | `0x00000001d800` | `1d800` | `120832` | `factory_boot` | |
-| `0x00000001d800` | `0x000000020000` | `2800` | `10240` | `factory_info` | |
-| `0x000000020000` | `0x000000040000` | `20000` | `131072` | `art` | |
-| `0x000000040000` | `0x000000050000` | `10000` | `65536` | `config` | |
-| `0x000000050000` | `0x000000070000` | `20000` | `131072` | `boot` | |
-| `0x000000070000` | `0x0000001c1200` | `151200` | `1380864` | `kernel` | |
-| `0x0000001c1200` | `0x000000430000` | `26ee00` | `2551296` | `rootfs` | squashfs based on boot logs |
-| `0x000000430000` | `0x0000007ffe00` | `3cfe00` | `3997184` | `rootfs_data` | for overlayfs? |
-| `0x0000007ffe00` | `0x000000800000` | `200` | `512` | `verify` | why does this overlap with firmware? |
-| `0x000000070000` | `0x000000800000` | `790000` | `7929856` | `firmware` | maybe this is just a "virtual" partition |
+| begin            | end              | size (hex) | size (decimal) | name           | note                                     |
+| ---------------- | ---------------- | ---------- | -------------- | -------------- | ---------------------------------------- |
+| `0x000000000000` | `0x00000001d800` | `1d800`    | `120832`       | `factory_boot` |                                          |
+| `0x00000001d800` | `0x000000020000` | `2800`     | `10240`        | `factory_info` |                                          |
+| `0x000000020000` | `0x000000040000` | `20000`    | `131072`       | `art`          |                                          |
+| `0x000000040000` | `0x000000050000` | `10000`    | `65536`        | `config`       |                                          |
+| `0x000000050000` | `0x000000070000` | `20000`    | `131072`       | `boot`         |                                          |
+| `0x000000070000` | `0x0000001c1200` | `151200`   | `1380864`      | `kernel`       |                                          |
+| `0x0000001c1200` | `0x000000430000` | `26ee00`   | `2551296`      | `rootfs`       | squashfs based on boot logs              |
+| `0x000000430000` | `0x0000007ffe00` | `3cfe00`   | `3997184`      | `rootfs_data`  | for overlayfs?                           |
+| `0x0000007ffe00` | `0x000000800000` | `200`      | `512`          | `verify`       | why does this overlap with firmware?     |
+| `0x000000070000` | `0x000000800000` | `790000`   | `7929856`      | `firmware`     | maybe this is just a "virtual" partition |
 
 #### Taking apart the `spi-flash.bin` based on partition table
 We can use `dd` to separate the partitions.
@@ -320,28 +320,28 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
 ```
 
-So `boot`, `factory_boot`, and `kernel` have some LZMA compressed data, which we should be able to uncompress with `7z`.
+So `boot`, `factory_boot`, and `kernel` have some LZMA compressed data, which we might be able to uncompress with `7z`.
 
 `config` partition doesn't contain any parts that `file` or `binwalk` are able to recognize, while `binwalk` entropy plot shows that the beginning of the partition containing data has very high entropy, so it may be encrypted.
 ![](screenshots/spi-flash-config-entropy.png)
 
 Extracted partitions:
-| partition name | link | notes |
-| -------------- | ---- | ----- |
+| partition name | link                                                            | notes                                      |
+| -------------- | --------------------------------------------------------------- | ------------------------------------------ |
 | `factory_boot` | [spi-flash-factory_boot.bin](./data/spi-flash-factory_boot.bin) | could this contain some more fancy u-boot? |
-| `factory_info` | [spi-flash-factory_info.bin](./data/spi-flash-factory_info.bin) | contains some plain strings |
-| `art` | [spi-flash-art.bin](./data/spi-flash-art.bin) | related to WiFi hardware |
-| `config` | [spi-flash-config.bin](./data/spi-flash-config.bin) | possibly encrypted data |
-| `boot` | [spi-flash-boot.bin](./data/spi-flash-boot.bin) | probably u-boot binary |
-| `kernel` | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin) | kernel binary |
-| `rootfs` | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin) | squashfs |
-| `rootfs_data` | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin) | squashfs |
-| `verify` | [spi-flash-verify.bin](./data/spi-flash-verify.bin) |  |
+| `factory_info` | [spi-flash-factory_info.bin](./data/spi-flash-factory_info.bin) | contains some plain strings                |
+| `art`          | [spi-flash-art.bin](./data/spi-flash-art.bin)                   | related to WiFi hardware                   |
+| `config`       | [spi-flash-config.bin](./data/spi-flash-config.bin)             | possibly encrypted data                    |
+| `boot`         | [spi-flash-boot.bin](./data/spi-flash-boot.bin)                 | probably u-boot binary                     |
+| `kernel`       | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin)             | kernel binary                              |
+| `rootfs`       | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin)             | squashfs                                   |
+| `rootfs_data`  | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin)   | squashfs                                   |
+| `verify`       | [spi-flash-verify.bin](./data/spi-flash-verify.bin)             |                                            |
 
 #### Extracting the root filesystem
-We know that `rootfs` partition contains a [squashfs filesystem image]() based on boot logs.
+We know that `rootfs` partition contains a [squashfs filesystem image](https://tldp.org/HOWTO/SquashFS-HOWTO/whatis.html) based on boot logs.
 
-Thanks to [StackExchange](https://unix.stackexchange.com/a/80312), we can extract the filesystem from the partition image by running the following in a directory where we want to extract the filesystem to:
+Thanks to [this answer on StackExchange](https://unix.stackexchange.com/a/80312), we can extract the filesystem from the partition image by running the following command in a directory where we want to extract the filesystem to:
 ```console
 unsquashfs spi-flash-rootfs.bin
 ```
@@ -1026,9 +1026,40 @@ GCC: (Realtek RSDK-4.8.5p1 Build 2521) 4.8.5 20150209 (prerelease)
 ```
 There are a few strings that look an awful lot like public or private RSA keys.
 
-After some experimenting with `openssl`, we determined that the private key and the second public key are a pair.
+After some experimenting with `openssl`, we determined that the private key and the second public key are a pair, but so far no idea what they are used to encrypt and decrypt.
+
+#### Reverse engineering `cloud-client` binary
+
+The `cloud-client` binary probably deals with communicating with the TP-Link cloud service, so it would be interesting to know how it works and how the connection is secured.
+
+We could take a look at it using `Ghidra`.
+
+The binary loads a few shared libraries, so those may be intersting as well:
+```console
+$ readelf -d cloud-client | grep NEEDED
+ 0x00000001 (NEEDED)                     Shared library: [libssl.so.1.0.0]
+ 0x00000001 (NEEDED)                     Shared library: [libcrypto.so.1.0.0]
+ 0x00000001 (NEEDED)                     Shared library: [libpthread.so.0]
+ 0x00000001 (NEEDED)                     Shared library: [libuci.so]
+ 0x00000001 (NEEDED)                     Shared library: [libubus.so]
+ 0x00000001 (NEEDED)                     Shared library: [libubox.so]
+ 0x00000001 (NEEDED)                     Shared library: [libjson.so.0]
+ 0x00000001 (NEEDED)                     Shared library: [libblobmsg_json.so]
+ 0x00000001 (NEEDED)                     Shared library: [libcurl.so.4]
+ 0x00000001 (NEEDED)                     Shared library: [librt.so.0]
+ 0x00000001 (NEEDED)                     Shared library: [libmsglog.so]
+ 0x00000001 (NEEDED)                     Shared library: [libz.so.1]
+ 0x00000001 (NEEDED)                     Shared library: [libaes.so]
+ 0x00000001 (NEEDED)                     Shared library: [libdecrypter.so]
+ 0x00000001 (NEEDED)                     Shared library: [libsecurity.so]
+ 0x00000001 (NEEDED)                     Shared library: [libdsd_client.so]
+ 0x00000001 (NEEDED)                     Shared library: [libm.so.0]
+ 0x00000001 (NEEDED)                     Shared library: [libdl.so.0]
+ 0x00000001 (NEEDED)                     Shared library: [libc.so.0]
+```
 
 ## References
+### Literature
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
 [tp-link-tapo-c200-unauthenticated-rce](https://www.hacefresko.com/posts/tp-link-tapo-c200-unauthenticated-rce).
 
@@ -1040,3 +1071,12 @@ FCC database contains some good pictures of the PCBs, which were used to check i
 
 Hanna Gustafsson and Hanna Kvist have written a Master's thesis paper containing information about the device:
 [thesis paper](https://www.diva-portal.org/smash/get/diva2:1679623/FULLTEXT01.pdf)
+
+### Used tools
+- [`minicom`](https://linux.die.net/man/1/minicom)
+- [`binwalk`](https://www.kali.org/tools/binwalk/)
+- [`unsquashfs`](https://tldp.org/HOWTO/SquashFS-HOWTO/mksqoverview.html)
+- [`dd`](https://man7.org/linux/man-pages/man1/dd.1.html)
+- [`readelf`](https://man7.org/linux/man-pages/man1/readelf.1.html)
+- [`Ghidra`](https://github.com/NationalSecurityAgency/ghidra)
+- 
