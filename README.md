@@ -351,6 +351,9 @@ unsquashfs spi-flash-rootfs.bin
 ```
 
 This produces a lot of errors due to failing symbolic links, but it also produces a directory called `squashfs-root`, containing our filesystem.
+<details>
+    <summary>filesystem tree</summary>
+    
 ```
 $ tree .
 .
@@ -914,6 +917,7 @@ $ tree .
 
 60 directories, 497 files
 ```
+</details>
 
 #### `libdecrypt.so`
 There is an interesting looking dynamic library found in `/usr/lib/libdecrypter.so`.
