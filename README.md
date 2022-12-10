@@ -12,7 +12,7 @@ Lassi Heikkilä `Y68725369`
 
 Mikko Isotalo `2264612`
 
-## Initial exploration
+## Initial exploration on the C200
 
 First up was the C200.
 
@@ -30,7 +30,7 @@ However, it does not have pins soldered onto it so that needed to be done:
 and connect wires to it:
 ![](./photos/c200-pcb-top-connected-uart-wires.jpg)
 
-After some time, the RX pin managed to rip out, taking the pad on the PCB with it, so the C200 became a read-only experience.
+After some time, the RX pin managed to rip out, taking the pad on the PCB with it, so shell access became a read-only experience.
 It is highly recommended to use a lot of glue or tape to prevent the pins from pulling on the pads too much.
 
 
@@ -1146,6 +1146,18 @@ During initial setup, the device offered to do automatic updates, so unless a us
 ### Original firmware
 
 The C100 came with firmware version 1.1.15 out of the box and the exploit did not seem to work.
+
+The device defaulted to automatic firmware upgrades during the night, but manual upgrade attempt did not find a new version available.
+
+## Intercepting network traffic on C100
+
+A Raspberry Pi was configured to function as a Wi-Fi access point, providing a network called `hacker-net` with password `test1234`.
+
+The C100 was configured to use this network during setup.
+
+`tcpdump` was running on the Raspberry Pi during the setup process as well.
+
+The device communicates with the cloud service using HTTPS, so without having access to the encryption keys, most of the network traffic is unknowable.
 
 ## References
 ### Literature

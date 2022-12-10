@@ -1,0 +1,2806 @@
+
+
+U-Boot 2014.01-v1.2 (Nov 30 2021 - 04:01:08)
+
+Board: IPCAM RTS3903 CPU: 500M :rx5281 prid=0xdc02
+force spi nor mode
+DRAM:  64 MiB @ 1066 MHz
+Skipping flash_init
+Flash: 0 Bytes
+SF: Unsupported flash IDs: manuf 20, jedec 4017, ext_jedec 7fe7
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Using default environment
+
+Autobooting in 1 seconds
+set watchdog, resetting...
+
+U-Boot 2014.01-v1.2 (Nov 30 2021 - 04:08:00)
+
+Board: IPCAM RTS3903 CPU: 500M :rx5281 prid=0xdc02
+force spi nor mode
+DRAM:  64 MiB @ 1066 MHz
+manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Flash: 0 Bytes
+manuf 20, jedec 4017, ext_jedec 8204
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Realtek PCIe GBE Family Controller mcfg = 0024
+new_ethaddr = 00:00:00:00:00:00
+r8168#0
+VF: validateLocalFirmware: copying flash to 0x82000000
+manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+SF: 8388608 bytes @ 0x0 Read: OK
+VF: validateLocalFirmware: ret=0(82fb7de0)
+VF: validateLocalFirmware: validate local firmware...
+TP Header at 82070000
+Autobooting in 1 seconds
+manuf 20, jedec 4017, ext_jedec 0000
+flash status is 0, 2, 0
+SF: Detected unknown with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+SF: 3145728 bytes @ 0x70000 Read: OK
+## Booting image at 82000000 ...
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 3.10.27 (root@smartlifeci1) (gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2521) ) #2 PREEMPT Tue Nov 30 04:16:10 CST 2021
+[    0.000000] prom cpufreq = 500000000
+[    0.000000] prom memsize = 67108864
+[    0.000000] hw_ver: 0x2, hw_rev: 0x1, isp_ver: 0x1
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU revision is: 0000dc02
+[    0.000000] FPU revision is: 01730001
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 04000000 @ 00000000 (usable)
+[    0.000000] Reserved contiguous memory at 0x410000(0x13ec000)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x03ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x03ffffff]
+[    0.000000] icache: 32kB/32B, dcache: 16kB/32B, scache: 0kB/0B
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+[    0.000000] Kernel command line: console=ttyS1,57600 root=/dev/mtdblock6 spdev=/dev/mtdblock7 rts-quadspi.channels=dual os_size=1376256
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 40372k/65536k available (3065k kernel code, 25164k reserved, 812k data, 152k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:57
+[    0.001000] Calibrating delay loop... 497.66 BogoMIPS (lpj=248832)
+[    0.012000] pid_max: default: 32768 minimum: 301
+[    0.013000] Mount-cache hash table entries: 512
+[    0.016000] pinctrl core: initialized pinctrl subsystem
+[    0.017000] NET: Registered protocol family 16
+[    0.018000] Init force reset registers
+[    0.019000] rtsxb2 registered with IRQs
+[    0.020000] INFO: initializing ISP memory ...
+[    0.021000] INFO: initializing ISP device ...
+[    0.022000] ISP camera platform devices added
+[    0.023000] INFO: initializing SD controller ...
+[    0.024000] INFO: initializing snd device ...
+[    0.025000] snd resvd mem size : 524288
+[    0.026000] INFO: initializing USB host ...
+[    0.027000] INFO: initializing spi host ...0
+[    0.028000] spi platform id is ffffffff
+[    0.029000] INFO: initializing I2C master ...
+[    0.030000] INFO: initializing DMA controller ...
+[    0.031000] INFO: initializing adc ...
+[    0.032000] INFO: initializing pinctrl device ...
+[    0.033000] pinctrl_platform rts3903-pinctrl: rtspc registered with IRQs
+[    0.034000] INFO: initializing ethernet devices ...
+[    0.035000] INFO: initializing USB phy ...
+[    0.036000] INFO: initializing watchdog controller ...
+[    0.037000] INFO: initializing PWM controller ...
+[    0.038000] INFO: initializing crypto device ...
+[    0.042000] bio: create slab <bio-0> at 0
+[    0.043000] rts_dmac rts3903-dmac: DesignWare DMA Controller, 4 channels
+[    0.044000] INFO: realtek DMA engine inited
+[    0.045000] usbcore: registered new interface driver usbfs
+[    0.046000] usbcore: registered new interface driver hub
+[    0.047000] usbcore: registered new device driver usb
+[    0.048000] usbphy-platform usbphy-platform: Initialized Realtek IPCam USB Phy module
+[    0.049000] Linux video capture interface: v2.00
+[    0.050000] Advanced Linux Sound Architecture Driver Initialized.
+[    0.052000] NET: Registered protocol family 2
+[    0.061000] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.074000] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.087000] TCP: Hash tables configured (established 512 bind 512)
+[    0.099000] TCP: reno registered
+[    0.106000] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.117000] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.130000] NET: Registered protocol family 1
+[    0.144000] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.156000] msgmni has been set to 78
+[    0.165000] NET: Registered protocol family 38
+[    0.174000] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    0.188000] io scheduler noop registered
+[    0.196000] io scheduler deadline registered
+[    0.205000] io scheduler cfq registered (default)
+[    0.214000] pwm_platform pwm_platform: could not get default status
+[    0.227000] Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+[    0.239000] serial8250: ttyS0 at MMIO 0x18810000 (irq = 6) is a 16550A
+[    0.252000] console [ttyS1] enabled, bootconsole disabled
+[    0.252000] console [ttyS1] enabled, bootconsole disabled
+[    0.274000] serial8250: ttyS1 at MMIO 0x18810100 (irq = 6) is a 16550A
+[    0.287000] serial8250: ttyS2 at MMIO 0x18810200 (irq = 6) is a 16550A
+[    0.301000] dbg_iomem initialized!
+[    0.308000] rts-quadspi rts3903-qspi: force to set channels from quad mode to dual mode
+[    0.324000] rts-quadspi rts3903-qspi: request 60000000 Hz, force to set 41666666 Hz
+[    0.339000] rts-quadspi rts3903-qspi: found default, expected mx25l12835f
+[    0.353000] rts-quadspi rts3903-qspi: default (8192 Kbytes)
+[    0.364000] hdrA:1380352,B:1839616,C:2551296
+[    0.373000] Searching for RedBoot partition table
+[    0.382000] 10 RedBoot partitions found on MTD device m25p80
+[    0.394000] Creating 10 MTD partitions on "m25p80":
+[    0.403000] 0x000000000000-0x00000001d800 : "factory_boot"
+[    0.414000] mtd: partition "factory_boot" doesn't end on an erase block -- force read-only
+[    0.432000] 0x00000001d800-0x000000020000 : "factory_info"
+[    0.443000] mtd: partition "factory_info" doesn't start on an erase block boundary -- force read-only
+[    0.462000] 0x000000020000-0x000000040000 : "art"
+[    0.472000] 0x000000040000-0x000000050000 : "config"
+[    0.483000] 0x000000050000-0x000000070000 : "boot"
+[    0.493000] 0x000000070000-0x0000001c1200 : "kernel"
+[    0.503000] mtd: partition "kernel" doesn't end on an erase block -- force read-only
+[    0.519000] 0x0000001c1200-0x000000430000 : "rootfs"
+[    0.529000] mtd: partition "rootfs" doesn't start on an erase block boundary -- force read-only
+[    0.547000] 0x000000430000-0x0000007ffe00 : "rootfs_data"
+[    0.558000] mtd: partition "rootfs_data" doesn't end on an erase block -- force read-only
+[    0.575000] 0x0000007ffe00-0x000000800000 : "verify"
+[    0.585000] mtd: partition "verify" doesn't start on an erase block boundary -- force read-only
+[    0.604000] 0x000000070000-0x000000800000 : "firmware"
+[    0.615000] rts-quadspi rts3903-qspi: Realtek QSPI Controller at 0x18030000 (irq 5)
+[    0.630000] rtl8168 Gigabit Ethernet driver 8.038.00-NAPI loaded
+[    0.730000] rtl8168 rts3903-rtl8168 (unregistered net_device): Get invalid MAC address from flash!
+[    0.748000] eth%d: 0xb8400000, 00:00:00:00:00:00, IRQ 10
+[    0.760000] PPP generic driver version 2.4.2
+[    0.768000] PPP MPPE Compression module registered
+[    0.778000] NET: Registered protocol family 24
+[    0.787000] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.800000] ehci-rts: ehci-rts platform driver
+[    0.809000] ehci-platform ehci-platform: EHCI Host Controller
+[    0.821000] ehci-platform ehci-platform: new USB bus registered, assigned bus number 1
+[    0.837000] ehci-platform ehci-platform: irq 11, io mem 0x18100000
+[    0.855000] ehci-platform ehci-platform: USB 2.0 started, EHCI 1.00
+[    0.867000] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    0.881000] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.895000] usb usb1: Product: EHCI Host Controller
+[    0.905000] usb usb1: Manufacturer: Linux 3.10.27 ehci_hcd
+[    0.916000] usb usb1: SerialNumber: ehci-platform
+[    0.926000] hub 1-0:1.0: USB hub found
+[    0.934000] hub 1-0:1.0: 1 port detected
+[    0.942000] i2c /dev entries driver
+[    0.949000] rtscam:isp resvd mem addr : 0x00490000, size : 0x136c000
+[    0.964000] rtscam:rtscam_mem_init v:0xa0490000 p:0x00490000 s:0x0000136c
+[    0.978000] rtscam:rtscam_lock_init
+[    0.985000] rtscam:rtscam_soc_probe
+[    0.992000] rtscam:rtscam_hx280_probe
+[    1.004000] rtscam:hx280enc:HW at base <0x18060000> with ID <0x48317011>
+[    1.018000] rtscam:rtscam_jpgenc_probe
+[    1.030000] rtscam:rtscam_osd2_probe
+[    1.038000] rtscam:rtstream_init
+[    1.045000] Stopped watchdog timer
+[    1.052000] Started watchdog timer
+[    1.058000] timer margin: 8 sec
+[    1.110000] rlx snd internal codec init
+[    1.118000] soc-audio soc-audio.0.auto: ASoC: machine RLX_INTERN_CARD should use snd_soc_register_card()
+[    1.138000] soc-audio soc-audio.0.auto:  rlx-codec-digital <-> pcm-platform mapping ok
+[    1.154000] soc-audio soc-audio.0.auto:  rlx-codec-analog <-> pcm-platform mapping ok
+[    1.171000] rlx snd spdif init
+[    1.177000] soc-audio soc-audio.1.auto: ASoC: machine RLX_SPDIF_CARD should use snd_soc_register_card()
+[    1.197000] soc-audio soc-audio.1.auto:  rlx-spdif <-> spdif-platform mapping ok
+[    1.212000] nf_conntrack version 0.5.0 (630 buckets, 2520 max)
+[    1.225000] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.235000] TCP: cubic registered
+[    1.242000] NET: Registered protocol family 17
+[    1.251000] Key type dns_resolver registered
+[    1.260000] slp_flash_init
+[    1.266000] Registered character driver slp_flash_chrdev
+[    1.280000] ALSA device list:
+[    1.286000]   #0: RLX_INTERN_CARD
+[    1.292000]   #1: RLX_SPDIF_CARD
+[    1.303000] VFS: Mounted root (squashfs filesystem) readonly on device 31:6.
+[    1.318000] Freeing unused kernel memory: 152K (803da000 - 80400000)
+- preinit -
+mounting rwroot
+- init -
+
+Please press Enter to activate this console. [    5.246000] Success to init gpio reset
+[    5.397000] cryptodev: driver 1.9 loaded.
+/etc/rc.common: cd: line 97: can't cd to /etc/uci-defaults
+Mon Nov 29 20:15:58 GMT 2021
+open /dev/crypto success
+close /dev/crypto
+[    7.928000] Erase from 0X40000 to 0X50000:
+[    7.936000] .
+[    7.939000] Program from 0X40000 to 0X50000:
+[    8.261000] .
+write successfully
+[    9.225000] leds-gpio leds-gpio: pins are not configured from the driver
+[main:35] Success to start audiopaly
+uci: Entry not found (protocol.wan.macaddr)
+config protocol macaddr diff
+uci: Entry not found (protocol.wan.fac_macaddr)
+config protocol fac_macaddr diff
+uci: Entry not found (network.wan.macaddr)
+config network macaddr diff
+uci: Entry not found (network.wan.fac_macaddr)
+config network fac_macaddr diff
+config protocol has changed. Commit it
+[   11.015000] Erase from 0X40000 to 0X50000:
+[   11.023000] .
+[   11.026000] Program from 0X40000 to 0X50000:
+[   11.384000] .
+write successfully
+config network has changed. Commit it
+[   11.513000] Erase from 0X40000 to 0X50000:
+[   11.522000] .
+[   11.525000] Program from 0X40000 to 0X50000:
+[   11.825000] .
+write successfully
+Command failed: Unknown error
+set device info from flash
+[   12.164000] Erase from 0X40000 to 0X50000:
+[   12.172000] .
+[   12.176000] Program from 0X40000 to 0X50000:
+[   12.476000] .
+write successfully
+[   12.566000] Erase from 0X40000 to 0X50000:
+[   12.574000] .
+[   12.578000] Program from 0X40000 to 0X50000:
+[   12.877000] .
+write successfully
+uci: Entry not found (device_info.info.cur_isp_version)
+[   13.044000] Erase from 0X40000 to 0X50000:
+[   13.052000] .
+[   13.055000] Program from 0X40000 to 0X50000:
+[   13.355000] .
+write successfully
+Starting wlan-manager: wlan-manager started.
+[   14.125000] device eth0 entered promiscuous mode
+[   14.135000] br-wan: port 1(eth0) entered forwarding state
+[   14.146000] br-wan: port 1(eth0) entered forwarding state
+10-wifi-ethernet-switch: boot not done, don't switch
+[   15.284000] usb 1-1: new high-speed USB device number 2 using ehci-platform
+Command failed: Not found
+[   15.441000] usb 1-1: New USB device found, idVendor=0bda, idProduct=f179
+[   15.466000] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[   15.490000] usb 1-1: SerialNumber: 1C61B49BFDF4
+[   16.152000] br-wan: port 1(eth0) entered forwarding state
+[   17.134000] wlan-manager: insmod 8188fu.ko...
+[   17.345000] Erase from 0X40000 to 0X50000:
+[   17.353000] .
+[   17.357000] Program from 0X40000 to 0X50000:
+[   17.663000] .
+write successfully
+wlan-manager: driver is not ready, wait...
+[   18.567000] usbcore: registered new interface driver rtl8188fu
+[   18.815000] wlan-manager: start sta...
+[   18.823000] wlan-manager: ifconfig wlan0 up.
+[   19.542000] device wlan0 entered promiscuous mode
+[   19.590000] br-wan: port 2(wlan0) entered forwarding state
+[   19.601000] br-wan: port 2(wlan0) entered forwarding state
+[2021-11-29 20:16:13][ERROR][cloud-sdk]cloud.c:93:main-- 
+*********************
+cloud-brd version: -rc04, build_time:20211130_035852
+*********************
+
+**************************************************
+********************config dump*******************
+--------------------------------------------------
+sef domain                      : n-deventry-dcipc.tplinkcloud.com
+sef port                        : 443
+cloud svr default port          : 443
+default svr                     : n-devs-dcipc.tplinkcloud.com
+default port                    : 443
+default valid time              : 172800
+heartbeat interval              : 55000
+request timeout                 : 5000
+reconnect timewait max          : 128000
+reconnect cachedsvr max times   : 5
+reconnect defaultsvr max times  : 5
+reconnect random time min       : 2000
+reconnect random time max       : 128000
+short connect interval          : 259200000
+max message number              : 1000
+max client number               : 20
+service file                    : /etc/cloud-sdk/cloud_service.cfg
+cer file                        : /etc/cloud-sdk/2048_newroot.cer
+ssl verify CN                   : 
+ssl verify time                 : 0
+**************************************************
+[2021-11-29 20:16:13][ERROR][cloud-sdk]cloud.c:137:main-- cloud-brd run first time
+[2021-11-29 20:16:13][ERROR][cloud-sdk]cloud.c:167:main-- connect state init success: 0x4 0x4
+[2021-11-29 20:16:13][ERROR][cloud-sdk]cloud.c:214:main-- waiting for register
+[   21.608000] br-wan: port 2(wlan0) entered forwarding state
+[   23.347000] Erase from 0X40000 to 0X50000:
+[   23.367000] .
+[   23.371000] Program from 0X40000 to 0X50000:
+[   23.721000] .
+write successfully
+open /dev/crypto success
+[2021-11-29 20:16:16][ERROR][cloud-client]Function is:main, Line is:480.cloud-client start!
+
+[2021-11-29 20:16:16][ERROR][cloud-sdk]cloud_api.c:38:cloud_api_init-- cloud-sdk version: -rc04, build_time:20211130_035852
+[2021-11-29 20:16:16][ERROR][cloud-sdk]cloud_register.c:125:register_thread-- cloud-sdk register a fd in cloud-brd first time
+
+[2021-11-29 20:16:16][ERROR][cloud-sdk]cloud_client_handle.c:939:cloud_client_handle_register-- cloud-brd reqeuset helloCloud string from cloud-sdk
+
+[2021-11-29 20:16:16][ERROR][cloud-sdk]cloud_register.c:427:register_handle_dispatch-- cloud-sdk handle cloud-brd's helloCloud string request 1 times
+[2021-11-29 20:16:16][ERROR][cloud-client]Function is:openapi_config_get_user_bind_code, Line is:677.config_get_user_bind_code Failed to lookup option bindCode.
+
+[INFO][cloud-service] init_config_info(587): hw_id:       D9B4C65B9322B98511E9568934219C5F
+
+[INFO][cloud-service] init_config_info(588): dev_id:      80217757893CC345F30BE08C6278EAAA202FD7FD
+
+[INFO][cloud-service] init_config_info(589): dev_type:    SMART.IPCAMERA
+
+[INFO][cloud-service] init_config_info(590): dev_model:    C100
+
+[INFO][cloud-service] init_config_info(591): dev_alias:   Tapo_Camera
+
+[INFO][cloud-service] init_config_info(592): dev_mac:     1C61B49BFDF4
+
+[INFO][cloud-service] init_config_info(593): dev_name:    C100
+
+[INFO][cloud-service] init_config_info(594): hw_ver:      2.0
+
+[INFO][cloud-service] init_config_info(595): fw_ver:      1.1.15 Build 211130 Rel.15378n(4555)
+
+[INFO][cloud-service] init_config_info(596): oem_id:      3BABD40007EE7AD631EA61A73C8B9D64
+
+[INFO][cloud-service] init_config_info(597): zone_id:     Europe/London
+
+[INFO][cloud-service] init_config_info(599): device_bind_status: 0
+
+[INFO][cloud-service] init_config_info(600): msg_push_switch: 1
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+Command failed: Not found
+generate key: 3600days 2048bits
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:16:17][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:17][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:16:17][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:16:22][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:22][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:16:22][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:234(search_dns_cache) : dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+uci: Entry not found (device_info.i[   32.124000] rtscam:begin to load fw from isp.fw
+nfo.sensor)
+[   32.242000] rtscam:Load firmware size : 131024.
+	 [storage] create_and_init_shm(134). creating initial shm...
+	 [storage] create_and_init_shm(137). shm creating succeeded, id: 65538, len:16960
+	 [storage] create_and_init_shm(148). shm mapped @0x77806000.
+	 [storage] create_and_init_sem(175). creating initial sem...
+	 [storage] wait_till_fs_ready(64). jffs is ready.
+umount: can't umount /tmp/mnt/harddisk_1: No such file or directory
+	 [storage] formatted_exec(70). system function error :No such file or directory
+
+	 [storage] do_umount(211). No such file or directory
+== GET SENSOR TYPE: SC2336. ==
+sleep: invalid number '0.1'
+Invalid sdcard device /dev/mmcblk0, please check configuration.
+	 [storage] formatted_exec(70).[   32.575000] Erase from 0X40000 to 0X50000:
+ system function error :No such [   32.589000] .file or directory
+
+	 [storage]
+ uci_load_single_disk(530). moun[   32.603000] Program from 0X40000 to 0X50000:
+ting disk 1 failed
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[   32.892000] .
+write successfully
+now start cet...
+	 [storage] update_disk_status_for_cet(363). ubus_lookup_id update_disk_status failed
+
+Command failed: Unknown error
+== SENSOR TYPE: SC2336. ==[   33.452000] rtscam:begin to load fw from isp.fw
+
+[   33.468000] rtscam:Load firmware size : 131024.
+[   33.496000] rtscam:Found ISP 1.011 device
+[   33.520000] rtscam:video device <rts3903-isp> registered
+[   33.534000] rtscam:rts3903-isp initialized
+cannot find dbg_iomem, create it...
+[INFO][dn_switch][get_model_profile]-816: sensor: SC2336, load config: /tmp/base-files/etc/dn_switch_SC2336.ini
+C100 2.0:smartir_enable
+C100 2.0:smartir_level
+name=C100 2.0
+led_cnt=1
+with_ldr=0
+irt_comm[0]={143,27}
+irt_comm[1]={124,20}
+irt_comm[2]={115,10}
+irt_comm[3]={95,6}
+irt_comm[4]={77,4}
+irt_comm[5]={60,3}
+irt_comm[6]={55,2}
+irt_comm[7]={50,1}
+ir_cut_day_gpio_num=9
+ir_cut_night_gpio_num=11
+ir_led_gpio_num=17
+irt_ncomm={77,4}
+ir_delay=5
+gain_I={0.970000,0.980000}
+gain_N={1.180000,1.670000}
+natural_rate_thresh=0.050000
+thresh_no_adc={1500,1200,900,630,440,160,60,20}
+day_ae_compensation={0,0,0,0,0,0,0,0}
+day_ae_antiflicker_enable=1
+day_ae_antiflicker_freq=50
+night_ae_compensation=0
+night_ae_antiflicker_enable=0
+day_drc_asymmetry={20,17,14,11,8,4,0,0}
+night_drc_asymmetry={0,0,0,0,0,5,15,0}
+ae_gain_level={0,2,4,8,16,32,64,128}
+smartir_enable=0
+smartir_level=30
+day_auto_wdr_level=60
+night_auto_wdr_level=60
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+open /dev/crypto success
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+	 [storage] update_disk_status_for_cet(363). ubus_lookup_id update_disk_status failed
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+stream0 roi attr: 0 0 0 0 0 0
+stream1 roi attr: 0 0 0 0 0 0
+video_init done
+[INFO][cet][buffer_pool_alloc]-304: buffer audio queue id.
+
+	 [storage] init_stm_files_structure(144). sizeof(struct stm_file) = 72
+	 [storage] open_shm(305). exit open shm(shmprt:0x77d8c000  shmlen:16960  flag = 0x1b6).
+	 [storage] open_sem(333). exit open sem(semid:32769, flag:0x1b4).
+	 [storage] data_sync_handle_thread(186). register signal handler on thread:0x75f8c500
+[ERROR][cet][reload_audio_record_cfg]-609: ENABLE record and clips audio!
+[INFO][cet][bq_register_record]-676: bq_register_record chn: 0, stream_t: 0, tid: 1978713344
+
+	 [storage] stm_open(1813). [0] stm_fd is allocated. channel = 0, type = video, flags = 0x1, mode = 0x1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+	 [storage] update_disk_status_for_cet(363). ubus_lookup_id update_disk_status failed
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[INFO][cet][input_h264_ch0_device_init]-529: Init H264 video device H264-ch0
+[INFO][cet][input_h264_ch1_device_init]-576: Init H264 video device H264-ch1
+[INFO][cet][input_jpeg_device_init]-605: Init jpeg device H264-ch2
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+input_sound_device_init done
+bufq[0]: empty sig list. create one. The first thread id is 1977664768
+bufq[1]: empty sig list. create one. The first thread id is 1977664768
+bufq[2]: empty sig list. create one. The first thread id is 1977664768
+[INFO][cet][main]-1120: Server begin eventloop
+[INFO][cet][cet_ubus_init]-6237: connected as b480dd57
+
+Play this stream using the URL "rtsp://192.168.0.10/stream1"
+Play this stream using the URL "rtsp://192.168.0.10/stream2"
+[denoise_intf_create 147] denoise library. version: 1.3. time: 2019-12-27
+Table address = 0 
+8000 AECNS is created sucessfully 
+Sound goto normal mode
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[INFO][dn_switch][dn_switch_auto_thread_no_adc]-1846: day thresh: 77, night threash: 4, delay: 5
+[INFO][dn_switch][dn_switch_auto_thread_no_adc]-1904: switch to day mode @ 2580
+[ERROR][dn_switch][dn_switch_ctrl_vda]-1377: call vda disable/enable md/od failed
+[reload_timing_reboot_cfg]-268: random value: 1058s
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+
+[INFO][dn_switch][image_light_freq_mode_set]-1288: light freq mode:3
+
+[INFO][2021-11-29 20:16:31] libsmart version: 1.3.0.374-3f7bb7d-master
+[2021-11-29 20:16:32] nvid.c:main:150 - nvid started
+[2021-11-29 20:16:32] nvid.c:main:172 - signal_handler succeed
+[2021-11-29 20:16:32] nvid.c:main:193 - begin start onvif
+[2021-11-29 20:16:32][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[ERROR][dn_switch][dn_switch_ctrl_vda]-1377: call vda disable/enable md/od failed
+[2021-11-29 20:16:32][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:16:32][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+boot_done: mode_switch to wifi
+[2021-11-29 20:16:32] nvid.c:main:200 - start onvif succeed
+[2021-11-29 20:16:32] nvid.c:main:214 - begin uloop run
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:16:33][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:33][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:16:33][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+switch to wifi...
+vda_ubus_register_dn_switch_event_handler 1099
+[Debug] [setLedEvent:513] setLedEvent = 10
+[Debug] [main:660] gCurrLedEvent = 10
+--------call dhcp restart----
+[Debug] [setLedEvent:513] setLedEvent = 9
+[Debug] [main:660] gCurrLedEvent = 9
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+killall: udhcpc: no process killed
+[2021-11-29 20:16:34][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:34][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:16:34][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+----------udhcpc start with no ip--------
+update_network does nothing
+switch done
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; l[   42.661000] wlan-manager: start hostap...
+ink_status: 1, bind_state: 0
+
+[   42.679000] wlan-manager: ifconfig wlan1 192.168.191.1 up.
+[   42.762000] wlan-manager: start dhcp server...
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[   43.268000] wlan-manager: start onboarding...
+update without switch...
+open /dev/crypto success
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[2021-11-29 20:16:36][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:36][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:16:36][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[main:479] Success to start onboarding
+dnsd: accepting UDP packets on 0.0.0.0:53
+switch done
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[Debug] [main:660] gCurrLedEvent = 9
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[Debug] [setLedEvent:513] setLedEvent = 10
+[Debug] [main:660] gCurrLedEvent = 10
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:16:40][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:40][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:16:40][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] ensure_dev_valid(496): device is unbinded.
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:16:48][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:48][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:16:48][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:16:50][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:50][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:16:50][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:234(search_dns_cache) : dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:16:55][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:16:55][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:16:55][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:05][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:05][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:17:05][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:06][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:06][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:06][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:07][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:07][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:07][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:09][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:09][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:09][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:13][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:13][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:13][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:21][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:21][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:21][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:22][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:22][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:17:22][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:234(search_dns_cache) : dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:27][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:27][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:17:27][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:37][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:37][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:17:37][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+dnsd: packet has 0 queries, ignored
+dnsd: packet has 0 queries, ignored
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:38][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:38][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:38][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[  107.182000] Erase from 0X40000 to 0X50000:
+[  107.191000] .
+[  107.194000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[  107.511000] .
+write successfully
+[2021-11-29 20:17:39][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:39][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:39][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+dnsd: packet has 0 queries, ignored
+dnsd: packet has 0 queries, ignored
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[2021-11-29 20:17:41][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:41][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:41][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:17:46][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:46][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:46][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:234(search_dns_cache) : dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[2021-11-29 20:17:54][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:54][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:17:54][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 20:17:55][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:17:55][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:17:55][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[2021-11-29 20:18:00][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:00][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:18:00][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:18:10][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:10][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:18:10][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 20:18:11][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:11][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:18:11][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[2021-11-29 20:18:12][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:12][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:18:12][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:18:14][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:14][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:18:14][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[2021-11-29 20:18:18][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:18][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:18:18][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:234(search_dns_cache) : dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:18:26][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:26][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:18:26][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 20:18:27][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:27][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:18:27][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 20:18:32][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:32][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:18:32][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or se[  166.644000] Erase from 0X40000 to 0X50000:
+rvice not known]
+
+[ERROR][cloud-service] tcp_conne[  166.663000] .ct_server(381): error: cannot re
+solve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server[  166.690000] Program from 0X40000 to 0X50000:
+(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[  167.065000] .
+write successfully
+[  167.080000] Erase from 0X40000 to 0X50000:
+[  167.092000] .
+[  167.095000] Program from 0X40000 to 0X50000:
+[  167.534000] .
+write successfully
+[  167.549000] Erase from 0X40000 to 0X50000:
+[  167.560000] .
+[  167.566000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[  167.966000] .
+write successfully
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 20:18:40][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:40][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 20:18:40][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[  168.284000] Erase from 0X40000 to 0X50000:
+[  168.294000] .
+[  168.299000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot re[  168.680000] .solve n-device-api.tplinkcloud.c
+write successfully
+om:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[  169.007000] Erase from 0X40000 to 0X50000:
+[  169.019000] .
+[  169.023000] Program from 0X40000 to 0X50000:
+[2021-11-29 20:18:41][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 20:18:41][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 20:18:41][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[  169.408000] .
+write successfully
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 22:18:42][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 22:18:42][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 22:18:42][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[  170.349000] Erase from 0X40000 to 0X50000:
+[  170.358000] .
+[  170.364000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server po[  170.740000] .rt: 443
+
+
+write successfully
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 22:18:44][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 22:18:44][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 22:18:44][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[2021-11-29 22:18:45][ERROR][cloud-client]Function is:userBindCloudResultHandle, Line is:548.++++++++++user_bind callback errCode: -3002++++++++++
+
+[2021-11-29 22:18:45][ERROR][cloud-client]Function is:userBindCloudResultHandle, Line is:625.userbind or rebind errorCode: -3002 ; errMsg: cloud-client send to cloud-brd Request timeout!
+
+[2021-11-29 22:18:45][ERROR][cloud-client]Function is:setCloudConfBindRecordFailedCount, Line is:92.setCloudConfBindRecordFailedCount: 1
+
+[2021-11-29 22:18:45][ERROR][cloud-client]Function is:cloudSdkErrMsgHandle, Line is:162.Cloud SDK reply error msg: errno[-3002]!
+
+	 [storage] set_dev_bind_status(237). STM: device bind status: 0
+
+[  173.566000] Erase from 0X40000 to 0X50000:
+[  173.577000] .
+[  173.585000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[  174.048000] .
+write successfully
+[2021-11-29 22:18:46][ERROR][cloud-client]Function is:checkConfigOwner, Line is:262.owner check failed!
+
+[2021-11-29 22:18:46][ERROR][cloud-client]Function is:set_action_status, Line is:469.checkConfigOwner failed, config file ower is not cloud!
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+Command failed: Not found
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[Debug] [setLedEvent:513] setLedEvent = 3
+[2021-11-29 22:18:48][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 22:18:48][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 22:18:48][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[Debug] [main:660] gCurrLedEvent = 3
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+---WLAN---boot OK
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+---WLAN---get_cloud_status=0
+---WLAN---send event connected_cloudnotok
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:234(search_dns_cache) : dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[Debug] [setLedEvent:513] setLedEvent = 5
+[Deb[  181.966000] Erase from 0X40000 to 0X50000:
+ug] [main:660] gCurrLedEvent = 5[  181.977000] .
+
+[  181.988000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[  182.362000] .
+write successfully
+[wifiEntry:852] WiFi is connected
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+----------udhcpc start with no ip--------
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 22:18:56][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-devs-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 22:18:56][ERROR][cloud-sdk]cloud_session.c:1575:cloud_session_connect_defaultSvr-- defaultSvr fail to get ip
+[2021-11-29 22:18:56][ERROR][cloud-sdk]cloud_session.c:664:cloud_session_active_long_time-- fail to connect the defaultSvr, result:-4
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] http_process(1161): dev_token_is_valid invalid.
+
+[ERROR][cloud-service] dst_handle(656): http_process failed.
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 22:18:58][ERROR][cloud-sdk]cloud_ip_list.c:61:cloud_ip_list_parse-- get addr info error, host:n-deventry-dcipc.tplinkcloud.com, serv:443, Name or service not known
+[2021-11-29 22:18:58][ERROR][cloud-sdk]cloud_session.c:1402:cloud_session_connect_sef-- fail to parse the SEF domain:n-deventry-dcipc.tplinkcloud.com:443
+[2021-11-29 22:18:58][ERROR][cloud-sdk]cloud_session.c:370:cloud_session_active_long_time-- fail to connect the SEF, result:-1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+---WLAN---send event connected_cloudnotok
+[Debug] [setLedEvent:513] setLedEvent = 5
+[Debug] [main:660] gCurrLedEvent = 5
+[Debug] [main:700] The event is the same, don't do everything
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[ERROR][cloud-service] resolve_server_name(144): error: failed to getaddrinfo: error[-2], msg[Name or service not known]
+
+[ERROR][cloud-service] tcp_connect_server(381): error: cannot resolve n-device-api.tplinkcloud.com:443.
+
+[ERROR][cloud-service] ssl_connect_server(493): error: failed to tcp connect to server.
+
+[ERROR][cloud-service] http_process_validate(992): error: failed to connect server name: n-device-api.tplinkcloud.com -- server port: 443
+
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][relayd]dns.c:309(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[ERROR][rtspd]dns.c:361(do_resolve_hostname) : getaddrinfo failed: -2; Name or service not known.
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+----------ip changed from 192.168.0.10 to 192.168.3.15--------
+----------router changed from 192.168.0.1 to 192.168.3.1--------
+get dns form static dhcp:1.1.1.1, prev_append_dns:0.0.0.0
+get new dns ip, reset append_dns as:1.1.1.1
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[  189.152000] Erase from 0X40000 to 0X50000:
+[  189.175000] .
+[  189.183000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] read_value_from_uci_option(349): error: failed to get cloud_config:bind:bindCode.
+
+[  189.808000] .
+write successfully
+[INFO][cloud-service] dev_token_update(157): 	
+****SERVER INFO****
+		url:https://n-euw1-device-api.tplinkcloud.com
+		protocol:HTTPS
+		host:n-euw1-device-api.tplinkcloud.com
+		port:443
+		path:/
+
+[wifiEntry:952] WiFi status is done
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[Debug] [setLedEvent:513] setLedEvent = 4
+[Debug] [main:660] gCurrLedEvent = 4
+---WLAN---send event connected_cloudnotok
+Command failed: Not found
+[Debug] [setLedEvent:513] setLedEvent = 5
+[Debug] [main:660] gCurrLedEvent = 5
+[  190.681000] Erase from 0X40000 to 0X50000:
+[  190.694000] .
+[  190.699000] Program from 0X40000 to 0X50000:
+[  191.734000] .
+write successfully
+[  191.921000] Erase from 0X40000 to 0X50000:
+[  191.938000] .
+[  191.946000] Program from 0X40000 to 0X50000:
+[ERROR][cloud-service] ubus_get_link_status_cb(326): long link is not established; link_status: 1, bind_state: 0
+
+[2021-11-29 22:19:04][ERROR][cloud-client]Function is:recv_response_of_hello_cloud, Line is:235.1 times connectedToCloud:defaultSvr or cachedSvr helloCloud response
+
+[2021-11-29 22:19:04][ERROR][cloud-client]Function is:checkIfDeviceNeedBind, Line is:1091.cloud device need rebind to cloud account.
+
+[  192.815000] .
+write successfully
+[  192.869000] Erase from 0X40000 to 0X50000:
+[  192.888000] .
+[  192.895000] Program from 0X40000 to 0X50000:
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(aps1-relay-dcipc.i.tplinknbu.com).
+[ERROR][rtspd]dns.c:250(search_dns_cache) : rtsp-dcipc.tplinknbu.com's dns cache is empty.
+[ERROR][rtspd]domain_cache.c:460(domain_cache_init_conn_req) : failed when resolving hostname(rtsp-dcipc.tplinknbu.com).
+[  193.942000] .
+write successfully
+[  193.969000] Erase from 0X40000 to 0X50000:
+[  193.982000] .
+[  193.989000] Program from 0X40000 to 0X50000:
+[2021-11-29 22:19:06][ERROR][cloud-client]Function is:userBindCloudResultHandle, Line is:548.++++++++++user_bind callback errCode: 0++++++++++
+
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[Debug] [setLedEvent:513] setLedEvent = 7
+[Debug] [main:660] gCurrLedEvent = 7
+[  195.178000] .
+write successfully
+[  195.210000] Erase from 0X40000 to 0X50000:
+[  195.233000] .
+[  195.244000] Program from 0X40000 to 0X50000:
+Command failed: Not found
+[INFO][cloud-service] getDstLocalTime(442): dst_local_start:3.5.0/03:00:00, dst_local_end:10.5.0/04:00:00.
+
+[main:523] Success to stop onboarding
+close /dev/crypto
+[ERROR][cloud-service] ubus_get_devcie_token(485): ubus_invoke failed .
+
+[ERROR][cloud-service] get_xtoken(727): ubus_get_devcie_token: waiting 25 seconds and trying 1 times.
+
+[  196.602000] .
+write successfully
+[ERROR][dsd]recv_dsd_resp(67): read msg error
+[2021-11-29 22:19:08][ERROR][cloud-client]Function is:cc_send_request, Line is:38.response is NULL
+	 [storage] set_dev_bind_status([  196.908000] Erase from 0X40000 to 0X50000:
+237). STM: device bind status: 1
+
+[  196.929000] .
+[  196.938000] Program from 0X40000 to 0X50000:
+Reloading network... 
+[ERROR][cloud-service] alarm_service_refresh_state(995): service init is not ok
+
+{
+	"serviceInit": 0,
+	"serviceLevel": 0,
+	"is_service_Ok": 0,
+	"error_code": 0
+}
+[  198.170000] .
+write successfully
+[  198.196000] Erase from 0X40000 to 0X50000:
+[  198.211000] .
+[  198.220000] Program from 0X40000 to 0X50000:
+[ERROR][cet][ubus_restart_record]-1057: Call ubus_restart_record, maybe occur sync time.
+
+[  199.338000] .
+write successfully
+---WLAN---get_cloud_status=1
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
+update without switch...
+---WLAN---get_cloud_status=0
+---WLAN---send event connected_cloudnotok
+[Debug] [setLedEvent:513] setLedEvent = 5
+[Debug] [main:660] gCurrLedEvent = 5
+switch done
+Reloading firewall... 
+not in ap mode, no need to load ap_filter
+[2022-12-10 12:35:08][ERROR][cloud-client]Function is:recv_response_of_hello_cloud, Line is:235.2 times connectedToCloud:defaultSvr or cachedSvr helloCloud response
+
+---WLAN---get_cloud_status=1
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
+{
+	"err_code": 0
+}
+[ERROR][cloud-service] upload_msg(534): build msg json failed.
+
+[ERROR][cloud-service] run_uploader(685): msg uploaded error.
+
+[2022-12-10 12:35:09][ERROR][cloud-client]Function is:autoBindCloudResultHandle, Line is:435.++++++++++auto_bind callback errCode: 0++++++++++
+
+	 [storage] set_dev_bind_status(237). STM: device bind status: 1
+
+[ERROR][cloud-service] alarm_service_refresh_state(995): service init is not ok
+
+{
+	"serviceInit": 0,
+	"serviceLevel": 0,
+	"is_service_Ok": 0,
+	"error_code": 0
+}
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+---WLAN---send event connected_cloudok
+[Debug] [setLedEvent:513] setLedEvent = 6
+[Debug] [main:660] gCurrLedEvent = 6
+[Debug] [main:700] The event is the same, don't do everything
+[  210.629000] Erase from 0X40000 to 0X50000:
+[  210.639000] .
+[  210.642000] Program from 0X40000 to 0X50000:
+[  211.021000] .
+write successfully
+[2022-12-10 12:35:15][ERROR][cloud-sdk]cloud_client_handle.c:1179:cloud_client_handle_refresh_helloCloud-- cloud-brd request cloud-sdk to refresh helloCloud string
+
+[2022-12-10 12:35:15][ERROR][cloud-sdk]cloud_register.c:447:register_handle_dispatch-- cloud-sdk handle cloud-brd's resfresh helloCloud string request 1 times
+[2022-12-10 12:35:15][ERROR][cloud-client]Function is:openapi_config_get_user_bind_code, Line is:677.config_get_user_bind_code Failed to lookup option bindCode.
+
+killall: logrecordd: no process killed
+[ERROR][cloud-service] dev_token_is_valid(59): token->valid: 0
+[INFO][cloud-service] dev_token_update(157): 	
+****SERVER INFO****
+		url:https://euw1-device-tapo-care.i.tplinknbu.com
+		protocol:HTTPS
+		host:euw1-device-tapo-care.i.tplinknbu.com
+		port:443
+		path:/
+
+[INFO][cloud-service] ubus_get_device_token_cb(403): SERVER INFO:
+		url:https://euw1-device-tapo-care.i.tplinknbu.com
+		protocol:HTTPS
+		host:euw1-device-tapo-care.i.tplinknbu.com
+		port:443
+		path:/
+
+{
+	"err_code": 0
+}
+Dependent MappingPrimary: , random port, no hairpin	
+Return value is 0x8
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[INFO][cet][http_connection_new]-3483: New http connection fd: 28, point: 0x711528
+[INFO][cet][http_header_add_encrypt]-827: Key-Exchange: cipher="AES_128_CBC" username="admin" padding="PKCS7_16" algorithm="MD5" nonce="5a4f00eff1807742c3793404ff263a50000000f72efedf62"
+[INFO][cet][http_stream_video_h264_mixed_cb]-788: digest auth success remote:2
+[INFO][cet][generate_new_session_id]-113: Create new session (id: 1) in new http connection (fd: 28, point: 0x711528)
+[  248.674000] Erase from 0X40000 to 0X50000:
+[  248.687000] .
+[  248.699000] Program from 0X40000 to 0X50000:
+[  249.198000] .
+write successfully
+[ERROR][relayd]cookie.c:549(cookies_init_conn_req) : failed when resolving hostname(euw1-relay-i-068fb533be0a2403c.dcipc.i.tplinknbu.com).
+[ERROR][relayd]session.c:371(session_free_except_clips) : free all session.
+[ERROR][relayd]session.c:4500(do_cmd_start_relay) : start initiating session.
+[ERROR][relayd]session.c:4539(do_cmd_start_relay) : cookie is not valid.
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:4455(do_cmd_start_relay) : unknown token type
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:4775(req_is_relay_prepared) : cookie is still not available.
+[ERROR][relayd]session.c:151(session_timeout_cb) : session is timeout!
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[INFO][cet][http_header_add_encrypt]-827: Key-Exchange: cipher="AES_128_CBC" username="admin" padding="PKCS7_16" algorithm="MD5" nonce="262fe3760c43754d96bbb25fedc843bb0000014a17bf4f74"
+[ERROR][dsd]ds_convert_parse(37): ds convert: can't find entry (getFloodlightStatus)
+[ERROR][dsd]jreq_tlv_data_handle(3064): ds convert failed.
+[INFO][cet][http_stream_video_h264_mixed_cb]-788: digest auth success remote:2
+[INFO][cet][generate_new_session_id]-113: Create new session (id: 2) in new http connection (fd: 28, point: 0x711528)
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[  357.881000] Erase from 0X40000 to 0X50000:
+[  357.894000] .
+[  357.899000] Program from 0X40000 to 0X50000:
+[  358.420000] .
+write successfully
+stream0 roi attr: 0 0 0 0 0 0
+stream1 roi attr: 0 0 0 0 0 0
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][dsd]ds_handle_method_do(2608): Run check_fw_version service failed
+[ERROR][dsd]jreq_tlv_data_handle(3110): Signal handle failed.
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+Dependent MappingPrimary: , random port, no hairpin	
+Return value is 0x8
+[WARN][cet][http_read_cb]-3415: No valid session_id, closed by timeout. 
+[INFO][cet][http_connection_free]-3665: close http_connection fd: 28, method: (null), uri: (null)
+
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[  412.495000] Erase from 0X40000 to 0X50000:
+[  412.509000] .
+[  412.515000] Program from 0X40000 to 0X50000:
+[  413.023000] .
+write successfully
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+[ERROR][dsd]jreq_tlv_data_handle(3096): no matter device is locked or not, do not refuse these onboarding reqeusts
+Dependent MappingPrimary: , random port, no hairpin	
+Return value is 0x8
