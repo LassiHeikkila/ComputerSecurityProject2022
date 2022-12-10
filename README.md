@@ -1,4 +1,4 @@
-# Computer Security Project - Hacking TP-Link C200
+# Computer Security Project - Hacking TP-Link C100 & C200
 Project for course `521253S` at the University of Oulu.
 
 Aim: 
@@ -14,6 +14,8 @@ Mikko Isotalo `2264612`
 
 ## Initial exploration
 
+First up was the C200.
+
 ### Physical access
 The device was taken apart by prying open the case,
 and undoing all the screws that were holding in the PCBs and motors.
@@ -27,6 +29,9 @@ However, it does not have pins soldered onto it so that needed to be done:
 
 and connect wires to it:
 ![](./photos/c200-pcb-top-connected-uart-wires.jpg)
+
+After some time, the RX pin managed to rip out, taking the pad on the PCB with it, so the C200 became a read-only experience.
+It is highly recommended to use a lot of glue or tape to prevent the pins from pulling on the pads too much.
 
 
 ### Shell access from UART
@@ -202,7 +207,7 @@ md.b 80000000 800000
 
 Printing the memory contents through the serial port took a long time.
 
-The hexdump form of the output can be found [here](./data/spi-flash.hex), and in binary form [here](./data/spi-flash.bin).
+The hexdump form of the output can be found [here](./data/c200/spi-flash.hex), and in binary form [here](./data/c200/spi-flash.bin).
 
 ### Extracting rootfs from SPI flash image
 We can find the partition sizes and offsets from the [boot log](./logs/c200-fw-v1.1.14-boot.log):
@@ -343,15 +348,15 @@ This should help us to be able to view the stored configuration.
 Extracted partitions:
 | partition name | link                                                            | notes                                      |
 | -------------- | --------------------------------------------------------------- | ------------------------------------------ |
-| `factory_boot` | [spi-flash-factory_boot.bin](./data/spi-flash-factory_boot.bin) | could this contain some more fancy u-boot? |
-| `factory_info` | [spi-flash-factory_info.bin](./data/spi-flash-factory_info.bin) | contains some plain strings                |
-| `art`          | [spi-flash-art.bin](./data/spi-flash-art.bin)                   | related to WiFi hardware                   |
-| `config`       | [spi-flash-config.bin](./data/spi-flash-config.bin)             | encrypted configuration data               |
-| `boot`         | [spi-flash-boot.bin](./data/spi-flash-boot.bin)                 | probably u-boot binary                     |
-| `kernel`       | [spi-flash-kernel.bin](./data/spi-flash-kernel.bin)             | kernel binary                              |
-| `rootfs`       | [spi-flash-rootfs.bin](./data/spi-flash-rootfs.bin)             | squashfs                                   |
-| `rootfs_data`  | [spi-flash-rootfs_data.bin](./data/spi-flash-rootfs_data.bin)   | squashfs                                   |
-| `verify`       | [spi-flash-verify.bin](./data/spi-flash-verify.bin)             |                                            |
+| `factory_boot` | [spi-flash-factory_boot.bin](./data/c200/spi-flash-factory_boot.bin) | could this contain some more fancy u-boot? |
+| `factory_info` | [spi-flash-factory_info.bin](./data/c200/spi-flash-factory_info.bin) | contains some plain strings                |
+| `art`          | [spi-flash-art.bin](./data/c200/spi-flash-art.bin)                   | related to WiFi hardware                   |
+| `config`       | [spi-flash-config.bin](./data/c200/spi-flash-config.bin)             | encrypted configuration data               |
+| `boot`         | [spi-flash-boot.bin](./data/c200/spi-flash-boot.bin)                 | probably u-boot binary                     |
+| `kernel`       | [spi-flash-kernel.bin](./data/c200/spi-flash-kernel.bin)             | kernel binary                              |
+| `rootfs`       | [spi-flash-rootfs.bin](./data/c200/spi-flash-rootfs.bin)             | squashfs                                   |
+| `rootfs_data`  | [spi-flash-rootfs_data.bin](./data/c200/spi-flash-rootfs_data.bin)   | squashfs                                   |
+| `verify`       | [spi-flash-verify.bin](./data/c200/spi-flash-verify.bin)             |                                            |
 
 #### Extracting the root filesystem
 We know that `rootfs` partition contains a [squashfs filesystem image](https://tldp.org/HOWTO/SquashFS-HOWTO/whatis.html) based on boot logs.
@@ -1084,7 +1089,7 @@ $ readelf -d cloud-client | grep NEEDED
  0x00000001 (NEEDED)                     Shared library: [libc.so.0]
 ```
 
-## Reproducing `CVE-2021-4045`
+## Reproducing `CVE-2021-4045` on C200
 
 ### Original firmware
 
@@ -1135,6 +1140,12 @@ The RTSP stream version of the exploit works as well.
 ### Upgraded firmware
 The exploit doesn't work after upgrading device firmware to the latest available version, which at the time of writing was 1.1.19.
 During initial setup, the device offered to do automatic updates, so unless a user intentionally wants to remain insecure, the vulnerability is mitigated soon after installing the device.
+
+## Reproducing `CVE-2021-4045` on C100
+
+### Original firmware
+
+The C100 came with firmware version 1.1.15 out of the box and the exploit did not seem to work.
 
 ## References
 ### Literature
