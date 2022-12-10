@@ -94,7 +94,10 @@ config cert 'px5g'
 ```
 
 #### View running processes with `ps`:
-```console
+<details>
+    <summary>expand to view processes</summary>
+
+```
 root@SLP:~# ps 
   PID USER       VSZ STAT COMMAND
     1 root      2324 S    init
@@ -153,6 +156,8 @@ root@SLP:~# ps
  1280 root      3836 S    /usr/bin/motord
 14266 root      2320 R    ps
 ```
+
+</details>
 
 #### View open ports with netstat
 ```console
@@ -265,7 +270,11 @@ spi-flash-verify.bin: data
 So we know that `rootfs` and `rootfs_data` contain a `squashfs` filesystem, but nothing about the others.
 
 `binwalk` tells us that that some of the other partitions are compressed with LZMA or gzip:
-```console
+
+<details>
+    <summary>expand to view `binwalk` output</summary>
+
+```
 $ for img in spi-flash-*.bin; do echo "$img:" && binwalk -B $img; done
 spi-flash-art.bin:
 
@@ -320,6 +329,8 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
 ```
 
+</details>
+
 So `boot`, `factory_boot`, and `kernel` have some LZMA compressed data, which we might be able to uncompress with `7z`.
 
 `config` partition doesn't contain any parts that `file` or `binwalk` are able to recognize, while `binwalk` entropy plot shows that the beginning of the partition containing data has very high entropy, so it may be encrypted.
@@ -352,8 +363,8 @@ unsquashfs spi-flash-rootfs.bin
 
 This produces a lot of errors due to failing symbolic links, but it also produces a directory called `squashfs-root`, containing our filesystem.
 <details>
-    <summary>filesystem tree</summary>
-    
+    <summary>expand to view filesystem tree</summary>
+
 ```
 $ tree .
 .
@@ -917,6 +928,7 @@ $ tree .
 
 60 directories, 497 files
 ```
+
 </details>
 
 #### `libdecrypt.so`
@@ -939,6 +951,9 @@ However, that is a false detection. What `binwalk` actually detected was a forma
 Still, it's nice to see that maybe we can find something interesting from this shared object.
 
 Dumping the `strings` from the file yields the following:
+<details>
+    <summary>expand to view strings from `libdecrypter.so`</summary>
+
 ```console
 $ strings libdecrypter.so
 _init
@@ -1032,6 +1047,9 @@ GCC: (Realtek RSDK-4.8.5p1 Build 2521) 4.8.5 20150209 (prerelease)
 .mdebug.abi32
 
 ```
+
+</details>
+
 There are a few strings that look an awful lot like public or private RSA keys.
 
 After some experimenting with `openssl`, we determined that the private key and the second public key are a pair, but so far no idea what they are used to encrypt and decrypt.
